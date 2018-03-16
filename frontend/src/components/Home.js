@@ -5,7 +5,7 @@ class App extends Component {
   render() {
     return (
       <div className="container-full" id ="screen">
-        <div className="row" id ="screen">
+        <div className="row" id ="display">
   				<div className="row" id="header">
   					<div className = "col"id="logo-col">
   					  <img src="https://www.rawsonservices.com/wp-content/uploads/2014/05/Save-The-Nature.png" className="App-logo" alt="logo" />
@@ -50,9 +50,19 @@ class App extends Component {
             </div>
             <div className="col" id="body">
               <center><h1>Productos</h1></center>
-              <div className="col" >
-              </div>
+
             </div>
+            <footer className="footer">
+      	      <div className="container">
+      	        <div className="row">
+      	          <ul>
+      	            <li><label className="white-text" >Bogota, Colombia</label></li>
+      	            <li><label className="white-text" >@copyright 2018</label></li>
+      	            <li><label className="white-text" >https://github.com/orgs/LosChicuelos</label></li>
+      	          </ul>
+      	        </div>
+      	      </div>
+      	    </footer>
           </div> 
         </div>
       </div>

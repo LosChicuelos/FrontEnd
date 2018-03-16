@@ -1,34 +1,45 @@
 #screen{
-  min-width:600px;
   background-image: url(http://3.bp.blogspot.com/-WeoccxnkhUk/Ue_MfvnV_KI/AAAAAAAAThQ/fNKXAX4siRU/s1600/farm_1_1920_x_1200___1_.jpg);
-  min-height: 100px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 	min-height: 100%;
+	min-height: 1000px;
 	overflow:hidden;
+	position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
   
 }
-
+.html{
+  height:100%;
+}
 #header {
-  background-color: green;
   padding:10px;
   height: auto;
   min-width: 100%;
-  border-bottom: 3px solid  #4CAF50;;
 }
 
 #logo-col{
   max-width:80px;
+  margin-left:10px;
 }
 #searchcol{
   min-width:340px;
+  
 }
 #searchtext{
   margin-top:25px;
   width: 250px;
+  background-color: rgba(255,255,255,0.8);
+  color:black;
+  font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size:12px;
 }
+
 #searchbutton{
   border: 2px solid #4CAF50;
   height: 40px;
@@ -45,6 +56,15 @@
   border-radius: 50%;
   -webkit-transition-duration: 0.2s; /* Safari */
   transition-duration: 0.2s;
+}
+#searchbutton:hover{
+      background-color: #4CAF50; 
+    color: black; 
+    border: 2px solid #4CAF50;
+}
+#searchbutton:active{
+
+    border: 2px solid green;
 }
 #nose{
     text-align:center;
@@ -69,6 +89,7 @@
 .inftext{
   margin-top:25px;
   max-width: 200px;
+  
 }
 .label{
     margin-top:25px;
@@ -97,9 +118,8 @@
   text-decoration: none;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   display: inline-block;
-  font-size: 18px;
+  font-size: 14px;
   margin: 17px 2px;
-    margin-top:30px;
   cursor: pointer;
   border-radius: 10px;
   -webkit-transition-duration: 0.2s; /* Safari */
@@ -114,8 +134,14 @@
     color: black; 
     border: 2px solid #4CAF50;
 }
+.button1:active {
+  border:red;
+}
 
-
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
