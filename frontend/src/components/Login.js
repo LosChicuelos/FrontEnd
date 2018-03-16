@@ -14,8 +14,6 @@ class App extends Component {
   	  			    <textarea className="form-control" rows="1" cols=" 15"id="searchtext"></textarea>
   	  		        <button className="roundedbutton" id="searchbutton"> </button>
     		    </div>
-    		    <div className = "col-push"id="buttoncol">
-    		    </div>
             </div>
             <div className="col" id="bodycontainer">
                 <div className="col align-self-center" id="logincol">
