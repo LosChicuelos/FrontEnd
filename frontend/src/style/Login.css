@@ -1,4 +1,4 @@
-#screen{
+#screenLogin{
   background-image: url(http://3.bp.blogspot.com/-WeoccxnkhUk/Ue_MfvnV_KI/AAAAAAAAThQ/fNKXAX4siRU/s1600/farm_1_1920_x_1200___1_.jpg);
   background-attachment: fixed;
   background-position: center;
@@ -17,79 +17,14 @@
 .html{
   height:100%;
 }
-#header {
-  padding:10px;
-  height: auto;
-  min-width: 100%;
-}
-
-#logo-col{
-  max-width:80px;
-  margin-left:10px;
-}
-#searchcol{
-  min-width:340px;
-  
-}
-#searchtext{
-  margin-top:25px;
-  width: 250px;
-  background-color: rgba(255,255,255,0.8);
-  color:black;
-  font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  font-size:12px;
-}
-
-#searchbutton{
-  border: 2px solid #4CAF50;
-  height: 40px;
-  width: 40px;
-  background-color: green;
-  background-image: url(https://image.flaticon.com/icons/png/512/9/9714.png);
-  background-size: 27px 27px;
-  background-repeat: no-repeat;
-  background-position: center;
-  position:absolute;
-  top: 17px;
-  left:280px;
-  cursor: pointer;
-  border-radius: 50%;
-  -webkit-transition-duration: 0.2s; /* Safari */
-  transition-duration: 0.2s;
-}
-#searchbutton:hover{
-      background-color: #4CAF50; 
-    color: black; 
-    border: 2px solid #4CAF50;
-}
-#searchbutton:active{
-
-    border: 2px solid green;
-}
 #nose{
     text-align:center;
 }
-#logincol{
-  height:320px;
-  width:30%;
-  margin-top: 150px;
-	margin-left: 35%;
-	margin-right: 35%;
-	min-height: 320px;
-	background-color: rgba(200,200,200,0.8);
-	box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.7), 0 0px 20px 0 rgba(0, 0, 0, 0.9);
-	border-radius:30px;
-}
 
-#bodycontainer{
+#bodyLogin{
   position:relative;
   height:1080px;
   width: 100%;
-}
-.inftext{
-  margin-top:25px;
-  max-width: 200px;
-  
 }
 .label{
     margin-top:25px;
@@ -109,40 +44,7 @@
   
 }
 
-.button {
-  background-color: green; /* Green */
-  border: 2px solid #4CAF50;
-  color: white;
-  padding: 8px;
-  text-align: center;
-  text-decoration: none;
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  display: inline-block;
-  font-size: 14px;
-  margin: 17px 2px;
-  cursor: pointer;
-  border-radius: 10px;
-  -webkit-transition-duration: 0.2s; /* Safari */
-  transition-duration: 0.2s;
-    
-}
-
-
-.button1:hover {
-   
-    background-color: #4CAF50; 
-    color: black; 
-    border: 2px solid #4CAF50;
-}
-.button1:active {
-  border:red;
-}
-
 ::-webkit-scrollbar {
     width: 0px;
     background: transparent; /* make scrollbar transparent */
-}
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }

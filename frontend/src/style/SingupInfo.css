@@ -1,0 +1,29 @@
+#body-Singup{
+    height: auto;
+    width:60%;
+    margin-top: 15%;
+	margin-left: 20%;
+	margin-right: 20%;
+	background-color: rgba(200,200,200,0.8);
+	box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.7), 0 0px 20px 0 rgba(0, 0, 0, 0.9);
+	border-radius:30px;
+    position:absolute;
+}
+#row-1,#row-2{
+    margin-top: 15px;
+    height:75px;
+    width:100%;
+}
+
+.inputText{
+  width:80%;
+  max-width:250px;
+}
+.label{
+    margin-top:25px;
+    color:black;
+    max-width:100px;
+}
+.labe{
+    color:black;
+}

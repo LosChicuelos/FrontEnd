@@ -1,0 +1,86 @@
+#header {
+  padding:10px;
+  height: auto;
+  min-width: 100%;
+}
+
+#logo-col{
+  max-width:80px;
+  margin-left:10px;
+}
+#searchcol{
+  min-width:340px;
+  
+}
+.searchText{
+  margin-top:30px;
+  width: 250px;
+  background-color: rgba(255,255,255,0.8);
+  color:black;
+  font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size:12px;
+  text-align: left;
+}
+
+#searchbutton{
+  border: 2px solid #4CAF50;
+  height: 40px;
+  width: 40px;
+  background-color: green;
+  background-image: url(https://image.flaticon.com/icons/png/512/9/9714.png);
+  background-size: 27px 27px;
+  background-repeat: no-repeat;
+  background-position: center;
+  position:absolute;
+  top: 10px;
+  left:280px;
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-transition-duration: 0.2s; /* Safari */
+  transition-duration: 0.2s;
+}
+#searchbutton:hover{
+      background-color: #4CAF50; 
+    color: black; 
+    border: 2px solid #4CAF50;
+}
+#searchbutton:active{
+
+    border: 2px solid green;
+}
+.button1:hover {
+   
+    background-color: #4CAF50; 
+    color: black; 
+    border: 2px solid #4CAF50;
+}
+.button1:active {
+  border:red;
+}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 80px;
+  left:0;
+  
+}
+
+.button {
+  background-color: green; /* Green */
+  border: 2px solid #4CAF50;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  display: inline-block;
+  font-size: 14px;
+  margin: 17px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  -webkit-transition-duration: 0.2s; /* Safari */
+  transition-duration: 0.2s;
+    
+}
