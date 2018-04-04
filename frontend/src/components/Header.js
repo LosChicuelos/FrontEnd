@@ -5,7 +5,7 @@ class Header extends Component {
     return (
         <div className="row" id="header">
           	<div className = "col"id="logo-col">
-          	    <img src="https://www.rawsonservices.com/wp-content/uploads/2014/05/Save-The-Nature.png" className="App-logo" alt="logo" />
+          	    <a href="/"><img src="https://www.rawsonservices.com/wp-content/uploads/2014/05/Save-The-Nature.png" className="App-logo" alt="logo" /></a>
         	</div>
         	<div className = "col"id="searchcol">
         		<input  type="text" name="Password" className="inputText searchText" id="searchText"/>
@@ -22,8 +22,8 @@ class SessionButtons extends Component {
         if (this.props.value==='complete'){
             return (
                 <div className = "col-push"id="buttoncol">
-                    <button className="button button1">Ingresar</button> 
-                    <button className="button button1">Registrarse</button>
+                    <a href="/Login"><button className="button button1">Ingresar</button></a>
+                    <a href="/Singup"><button className="button button1">Registrarse</button></a>
                 </div>
             );
         }else{

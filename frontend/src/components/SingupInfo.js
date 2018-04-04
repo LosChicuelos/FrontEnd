@@ -58,7 +58,7 @@ class SignupInfo extends Component {
         var cellphone = /^\d{10}$/;
         var user = /^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/;
         var pass = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
-        var email = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        var email = /a/;
         this.validateInput(document.getElementById("firstname"),string);
         this.validateInput(document.getElementById("lastname"),string);
         this.validateInput(document.getElementById("id"),number);
