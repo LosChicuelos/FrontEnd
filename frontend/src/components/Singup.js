@@ -6,7 +6,7 @@ import SingupInfo from './SingupInfo'
 class Signup extends Component {
   render() {
     return (
-    <div className="container-full" id ="screenSingup">
+    <div className="container-fluid" id ="screenSingup">
         <div className="row" id ="screenSingup">
   		    <Header value='normal'/>
             <SingupInfo/>
