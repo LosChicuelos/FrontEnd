@@ -10,12 +10,12 @@ class LoginInfo extends Component {
     return (
         <div className="col align-self-center" id="logincol">
             <div className="label" id="usuario">
-                <center><h1 className="labe">Usuario</h1></center>
-                <center><input  type="text"id="Usuario" name="Usuario" className="inputText"/></center>
+                <center><h1 className="labe">Correo</h1></center>
+                <center><input  type="text" ref="email"id="Usuario" name="Usuario" className="inputText"/></center>
             </div>
             <div className="label" id="pass">
                 <center><h1 className="labe">Contraseña</h1></center>
-                <center><input  type="text" id="Contraseña" name="Contraseña" className="inputText"/></center>
+                <center><input  type="text" ref="pass"id="Contraseña" name="Contraseña" className="inputText"/></center>
             </div>
             <center><button className="button button1" onClick={()=>this.validateLogin()}>Ingresar</button></center> 
         </div>
