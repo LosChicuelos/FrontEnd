@@ -10,12 +10,16 @@ class Article extends Component {
   }
   render(){
       return(
-        <div className ="col-sm-3"  id="Article" key = {this.props.value}>
-                <img id="Articleimg" src="http://cdn.latribuna.hn/wp-content/uploads/2017/04/tomate-2-770x470.jpg"/>
-                <h2>{this.name} Producto</h2>
-                <p>{this.props.precio} Precio</p>
+        <div className ="col">
+            <div className="row">
+                <img src="http://cdn.latribuna.hn/wp-content/uploads/2017/04/tomate-2-770x470.jpg"/>
+            </div>
+            <div className="row">
+                <h2>Tomate</h2>
+                <p>Precio kg: 2400</p>
+            </div>
         </div>
-      );
+      )
   }
   
 }
