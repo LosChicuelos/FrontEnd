@@ -10,15 +10,17 @@ class Article extends Component {
       super(props);
   }
   render(){
-      <div className ="col">
-        <div className="row">
-            <img src="http://cdn.latribuna.hn/wp-content/uploads/2017/04/tomate-2-770x470.jpg"/>
+      return(
+        <div className ="col">
+            <div className="row">
+                <img src="http://cdn.latribuna.hn/wp-content/uploads/2017/04/tomate-2-770x470.jpg"/>
+            </div>
+            <div className="row">
+                <h2>Tomate</h2>
+                <p>Precio kg: 2400</p>
+            </div>
         </div>
-        <div className="row">
-            <h2>Tomate</h2>
-            <p>Precio kg: 2400</p>
-        </div>
-      </div>
+      )
   }
     async addArticle(data){
         
