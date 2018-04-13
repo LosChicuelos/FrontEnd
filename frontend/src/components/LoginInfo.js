@@ -17,18 +17,23 @@ class LoginInfo extends Component {
                 <center><h1 className="labe">Contraseña</h1></center>
                 <center><input  type="text" ref="pass"id="Contraseña" name="Contraseña" className="inputText"/></center>
             </div>
-            <center><button className="button button1" onClick={()=>this.validateLogin()}>Ingresar</button></center> 
+            <center><button className="button button1" onClick={()=>this.authenticateLogin()}>Ingresar</button></center> 
         </div>
     );
   }
-       validateLogin(){
-        const data = {
+       authenticateLogin(){
+         const data = {
             email: this.refs.email.value,
-            password: this.refs.pass.value
-        };
+            password: this.refs.pass.value,
+        }
         console.log(data);
         const user = new User();
-        user.athenticate(data);
+        user.authenticate(data);
+        if(user.infoError){
+            user.authenticateUser(data);
+        }
+        
+        
   }
   
 }

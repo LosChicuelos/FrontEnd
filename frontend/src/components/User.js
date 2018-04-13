@@ -14,7 +14,7 @@ import React, { Component } from 'react';
 
 
 class User extends Component {
-    validateError = false;
+    infoError = false;
   constructor(props){
       super(props);
   }
@@ -38,8 +38,8 @@ class User extends Component {
       if(list.test(input)){
             return true;
         } else {
-            alert(input+ ' invalido');
-            this.validateError=true;
+            alert('invalid' + input);
+            this.infoError=true;
             return false;
         }
   }
@@ -62,6 +62,14 @@ class User extends Component {
                 console.log(await response.json());
             }
         console.log(data);
+    }
+    async authenticateUser(data){
+              var xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                console.log(this.responseText);
+              };
+              xhttp.open("POST", "http://backend-bsdiaza.c9users.io/sessions?email=jdgaitanf@unal.edu.co&password=12345678", true);
+              xhttp.send();
     }
 }
 
