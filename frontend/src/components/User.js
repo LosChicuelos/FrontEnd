@@ -2,6 +2,7 @@
 /*global Headers*/
 /*global Request*/
 import React, { Component } from 'react';
+import swal from 'sweetalert2';
 
 
 
@@ -38,7 +39,6 @@ class User extends Component {
       if(list.test(input)){
             return true;
         } else {
-            alert('invalid' + input);
             this.infoError=true;
             return false;
         }
@@ -64,12 +64,14 @@ class User extends Component {
         console.log(data);
     }
     async authenticateUser(data){
-              var xhttp = new XMLHttpRequest();
-              xhttp.onreadystatechange = function() {
-                console.log(this.responseText);
-              };
-              xhttp.open("POST", "http://backend-bsdiaza.c9users.io/sessions?email=jdgaitanf@unal.edu.co&password=12345678", true);
-              xhttp.send();
+            
+                const swal = require('sweetalert2');
+                swal({
+                  title: 'Error!',
+                  text: 'Do you want to continue',
+                  type: 'error',
+                  confirmButtonText: 'Cool'
+                })
     }
 }
 

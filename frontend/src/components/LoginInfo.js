@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import swal from 'sweetalert2';
 import User from './User';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../style/LoginInfo.css';
@@ -15,7 +16,7 @@ class LoginInfo extends Component {
             </div>
             <div className="label" id="pass">
                 <center><h1 className="labe">Contraseña</h1></center>
-                <center><input  type="text" ref="pass"id="Contraseña" name="Contraseña" className="inputText"/></center>
+                <center><input  type="password" ref="pass"id="Contraseña" name="Contraseña" className="inputText"/></center>
             </div>
             <center><button className="button button1" onClick={()=>this.authenticateLogin()}>Ingresar</button></center> 
         </div>

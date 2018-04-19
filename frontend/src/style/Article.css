@@ -1,17 +1,25 @@
 #Article{
-    width:250px;
+    width:240px;
     min-width: 150px;
-    height: 210px;
-    margin-top: 15px;
+    height: auto;
+    margin:auto;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    margin-right:10px;
     border-radius: 10px;
     display:block;
+    position: auto;
+    padding:10px;
+    background-color: rgba(200,200,200,0.9);
+    box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.7), 0 0px 20px 0 rgba(0, 0, 0, 0.9);
 }
 #Articleimg{
-    min-width:150px;
+      width:100%;
+    min-width:100px;
   max-width:100%; 
   min-height:150px;
   max-height:150px;
-  margin:auto;
   border-radius: 10px;
-  box-shadow: 0 0px 5px 0 rgba(0, 70, 0, 0.7), 0 0px 20px 0 rgba(0, 70, 0, 0.9);
+  
 }

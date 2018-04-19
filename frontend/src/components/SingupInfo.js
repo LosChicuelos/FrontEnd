@@ -2,6 +2,7 @@
 /*global Headers*/
 /*global Request*/
 import React, { Component } from 'react';
+import swal from 'sweetalert2';
 import User from './User';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../style/SingupInfo.css';

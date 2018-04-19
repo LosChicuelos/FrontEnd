@@ -1,9 +1,9 @@
 #logincol{
   height:320px;
-  width:30%;
+  width:300px;
   margin-top: 150px;
-	margin-left: 35%;
-	margin-right: 35%;
+	margin-left: auto;
+	margin-right: auto;
 	min-height: 320px;
 	background-color: rgba(200,200,200,0.8);
 	box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.7), 0 0px 20px 0 rgba(0, 0, 0, 0.9);
