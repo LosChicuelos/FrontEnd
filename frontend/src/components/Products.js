@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import '../style/Products.css';
 import Header from './Header';
 import ProductsList from './ProductsList';
-import addIcon from '../assets/addIcon.png'
+import addIcon from '../assets/addIcon.png';
+import Footer from './Footer';
 class Products extends Component {
   render() {
     return (
@@ -11,6 +12,7 @@ class Products extends Component {
   		    <Header value='normal'/>
   		    <div className="col" id="Productsbodycontainer">
             <ProductsList user_id='1'/>
+            <Footer/>
           </div>
         </div>
       </div>

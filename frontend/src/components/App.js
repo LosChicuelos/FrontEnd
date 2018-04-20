@@ -17,6 +17,7 @@ const App = () => (
       <Route exact path='/UserMenu' component={UserMenu}/>
       <Route exact path='/ProductView' component={ProductView}/>
       <Route exact path='/Products' component={Products}/>
+      <Route exact path='/AddProduct' component={AddProduct}>
     </Switch>
   </main>
 )

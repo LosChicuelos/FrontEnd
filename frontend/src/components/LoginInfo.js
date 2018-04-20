@@ -30,9 +30,8 @@ class LoginInfo extends Component {
         console.log(data);
         const user = new User();
         user.authenticate(data);
-        if(user.infoError){
+        if(!user.infoError){
             user.authenticateUser(data);
-            window.location.href = '/UserMenu'; 
         }
         
         

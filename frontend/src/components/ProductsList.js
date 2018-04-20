@@ -15,7 +15,6 @@ class ProductsList extends Component {
           <br/>
             <center>
               <Articles user_id={this.props.user_id}/>
-              <Add value='true'/>
             </center>
         </div>
     );
@@ -25,10 +24,9 @@ class ProductsList extends Component {
 
 class Articles extends Component {
   componentWillMount(){
-    if(this.props.user_id===null){
+    if(this.props.user_id===undefined){
       axios.get('http://backend-bsdiaza.c9users.io/articles').then(response => this.setState({articles: response.data}));
     }else{
-      console.log('https://backend-bsdiaza.c9users.io/belongsuser?user_id='+this.props.user_id);
       axios.get('https://backend-bsdiaza.c9users.io/belongsuser?user_id='+this.props.user_id).then(response => this.setState({articles: response.data}));
     }
   }
@@ -45,6 +43,7 @@ class Articles extends Component {
         {this.state.articles.slice().map((info)=>
            <Article data={info}key={info.id}></Article>
         )}
+        <Add user_id={this.props.user_id}/>
       </div>
     );
   }
@@ -53,13 +52,15 @@ class Articles extends Component {
 class Add extends Component {
   
   render() {
-    if(this.props.value==='true'){
+    if(this.props.user_id!==undefined){
     return(
        <div className ="col-sm-3"  id="Article" key = {this.props.value}>
                 <img id="Articleimg" src={addIcon}/>
                 <center><h2>Agregar producto</h2></center>
         </div>
-    );}
+    );}else{
+      return null;
+    }
   }
   
 }

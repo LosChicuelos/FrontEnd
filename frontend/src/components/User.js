@@ -21,7 +21,6 @@ class User extends Component {
   }
     authenticate(data){
         this.validateInput(data.email,email);
-        this.validateInput(data.password,pass);
   }
      validate(data){
 
@@ -76,6 +75,7 @@ class User extends Component {
               };
               xhttp.open("POST", "http://backend-bsdiaza.c9users.io/sessions?email="+data.email+"&password="+data.password, true);
               xhttp.send();
+              console.log(xhttp.responseText);
               return xhttp.responseText;
     }
 }
