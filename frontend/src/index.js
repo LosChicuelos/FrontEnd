@@ -14,9 +14,9 @@ const allReducers = combineReducers({
 
 const store = createStore(
     allReducers,{
-        user: [{ email: '',
+        user: { email: '',
                 token: ''
-        }]
+        }
     }, window.devToolsExtension && 
         window.devToolsExtension()
 );
