@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { loginUser } from '../Actions/UserActions';
 import swal from 'sweetalert2';
 import User from './User';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../style/LoginInfo.css';
 
 class LoginInfo extends Component {
+    constructor(props){
+        super(props);
+        this.onLoginUser = this.onLoginUser.bind(this);
+    }
+    
+    onLoginUser(){
+        this.props.onLoginUser({email: 'adasdad', token: 'asdasda'});
+    }
     
   render() {
-      
     return (
         <div className="col align-self-center" id="logincol">
             <div className="label" id="usuario">
@@ -19,6 +28,8 @@ class LoginInfo extends Component {
                 <center><input  type="password" ref="pass"id="Contraseña" name="Contraseña" className="inputText"/></center>
             </div>
             <center><button className="button button1" onClick={()=>this.authenticateLogin()}>Ingresar</button></center> 
+            <div onClick={this.onLoginUser}>Login User</div>
+            {this.props.user.email}qwe
         </div>
     );
   }
@@ -39,4 +50,15 @@ class LoginInfo extends Component {
   
 }
 
-export default LoginInfo;
+const mapStateToProps = state => ({
+    user:{  
+        email: state.user.email,
+        token: state.user.token
+    }
+    
+})
+const mapActionsToProps = {
+    onLoginUser: loginUser
+}
+
+export default connect(mapStateToProps, mapActionsToProps)(LoginInfo);
