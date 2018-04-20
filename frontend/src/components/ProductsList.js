@@ -10,9 +10,7 @@ import addIcon from '../assets/addIcon.png';
 
 class ProductsList extends Component {
   render() {
-    console.log('https://backend-bsdiaza.c9users.io/belongsuser?user_id='+this.props.user_id);
     return (
-      
         <div className="col" id="ProductsList">
           <br/>
             <center>
