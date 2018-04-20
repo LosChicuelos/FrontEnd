@@ -40,6 +40,13 @@ class User extends Component {
             return true;
         } else {
             this.infoError=true;
+            const swal = require('sweetalert2');
+                swal({
+                  title: 'Error!',
+                  text: 'Do you want to continue',
+                  type: 'error',
+                  confirmButtonText: 'Cool'
+                })
             return false;
         }
   }
@@ -61,17 +68,15 @@ class User extends Component {
                 const response = await fetch('http://backend-bsdiaza.c9users.io/users');
                 console.log(await response.json());
             }
-        console.log(data);
     }
     async authenticateUser(data){
-            
-                const swal = require('sweetalert2');
-                swal({
-                  title: 'Error!',
-                  text: 'Do you want to continue',
-                  type: 'error',
-                  confirmButtonText: 'Cool'
-                })
+            var xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                console.log(this.responseText);
+              };
+              xhttp.open("POST", "http://backend-bsdiaza.c9users.io/sessions?email="+data.email+"&password="+data.password, true);
+              xhttp.send();
+              return xhttp.responseText;
     }
 }
 

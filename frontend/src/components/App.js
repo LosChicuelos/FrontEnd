@@ -6,6 +6,7 @@ import Login from './Login';
 import Singup from './Singup';
 import UserMenu from './UserMenu';
 import ProductView from './ProductView';
+import Products from './Products';
 
 const App = () => (
   <main>
@@ -15,6 +16,7 @@ const App = () => (
       <Route exact path='/Singup' component={Singup}/>
       <Route exact path='/UserMenu' component={UserMenu}/>
       <Route exact path='/ProductView' component={ProductView}/>
+      <Route exact path='/Products' component={Products}/>
     </Switch>
   </main>
 )

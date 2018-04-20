@@ -12,7 +12,7 @@ class UserOptions extends Component {
     
         <div className="col" id ="OptionsCol">
             <div className="row">
-                <a href="/" className ="col-sm-3" id="Option" >
+                <a href="/Products" className ="col-sm-3" id="Option" >
                     <img id="Optionimg" src={ProductsLogo}/>
                     <br/>
                     <center><h2 id="label"> Tus Productos</h2></center>

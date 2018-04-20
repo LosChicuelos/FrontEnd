@@ -73,7 +73,7 @@ class SignupInfo extends Component {
         console.log(data);
         const user = new User();
         user.validate(data);
-        if(!user.validateError){
+        if(!user.infoError){
             user.addUser(data);
         }
         
