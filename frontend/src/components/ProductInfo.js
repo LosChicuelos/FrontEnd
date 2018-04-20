@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../style/ProductInfo.css';
-class AddProductInfo extends Component {
+class ProductInfo extends Component {
   render() {
     return (        
     <div className="col" id="bodycontainer">
@@ -11,4 +11,4 @@ class AddProductInfo extends Component {
     );
   }
 }
-export default AddProductInfo;
+export default ProductInfo;

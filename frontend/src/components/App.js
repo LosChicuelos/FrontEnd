@@ -7,6 +7,7 @@ import Singup from './Singup';
 import UserMenu from './UserMenu';
 import ProductView from './ProductView';
 import Products from './Products';
+import AddProduct from './AddProduct';
 
 const App = () => (
   <main>
@@ -17,7 +18,7 @@ const App = () => (
       <Route exact path='/UserMenu' component={UserMenu}/>
       <Route exact path='/ProductView' component={ProductView}/>
       <Route exact path='/Products' component={Products}/>
-      <Route exact path='/AddProduct' component={AddProduct}>
+      <Route exact path='/AddProduct' component={AddProduct}/>
     </Switch>
   </main>
 )
