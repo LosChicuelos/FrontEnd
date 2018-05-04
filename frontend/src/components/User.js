@@ -59,11 +59,11 @@ class User extends Component {
                 headers,
                 body: JSON.stringify(data)
             }
-            const request = new Request('http://backend-bsdiaza.c9users.io/users',options);
+            const request = new Request('http://backend-pipemax85.c9users.io/users',options);
             const response = await fetch(request);
             const status = await response.status;
             if(status === 201){
-                const response = await fetch('http://backend-bsdiaza.c9users.io/users');
+                const response = await fetch('http://backend-pipemax85.c9users.io/users');
                 console.log(await response.json());
             }
     }
@@ -72,7 +72,7 @@ class User extends Component {
               xhttp.onreadystatechange = function() {
                 console.log(this.responseText);
               };
-              xhttp.open("POST", "http://backend-bsdiaza.c9users.io/sessions?email="+data.email+"&password="+data.password, true);
+              xhttp.open("POST", "http://backend-pipemax85.c9users.io/sessions?email="+data.email+"&password="+data.password, true);
               xhttp.send();
               console.log(xhttp.responseText);
               return xhttp.responseText;

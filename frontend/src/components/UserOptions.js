@@ -5,6 +5,8 @@ import MapsIcon from '../assets/MapsIcon.jpg';
 import AlliesIcon from '../assets/AlliesIcon.png';
 import EmailIcon from '../assets/EmailIcon.png';
 import BuyerIcon from '../assets/BuyerIcon.png';
+import ReportIcon from '../assets/ReportIcon.png';
+
 class UserOptions extends Component {
   render() {
     return (        
@@ -38,6 +40,11 @@ class UserOptions extends Component {
                     <img id="Optionimg" src={BuyerIcon}/>
                     <br/>
                     <center><h2 id="label"> Posibles Vendedores</h2></center>
+                </a>
+                <a href="/Reports" className ="col-sm-3"  id="Option">
+                    <img id="Optionimg" src={ReportIcon}/>
+                    <br/>
+                    <center><h2 id="label"> Reportes</h2></center>
                 </a>
             </div>
         </div>
