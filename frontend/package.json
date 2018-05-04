@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.1.0",
+    "firebase": "^4.13.1",
     "mobx-react": "^5.0.0",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",

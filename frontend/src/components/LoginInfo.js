@@ -99,11 +99,11 @@ class LoginInfo extends Component {
                 </button>
 
                 <button onClick={this.handleAuthT.bind(this)} class="g-button green">
-                    {this.state.user ? this.state.user.email : "Accede con Twitter"}
+                    {this.state.user ? this.state.user.providerData.email : "Accede con Twitter"}
                 </button>
             
             </div>
- 
+
 
         </div>
     );
