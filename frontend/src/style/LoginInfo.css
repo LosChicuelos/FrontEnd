@@ -1,3 +1,114 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+.g-button {
+    user-select: none;
+    box-shadow: 0 1px 0 rgba(0,0,0,.05);
+    border: 1px solid transparent;
+    color: #FFF;
+    border-radius: 2px;
+    cursor: default;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    height: 28px;
+    line-height: 28px;
+    min-width: 54px;
+    outline: 0;
+    padding: 0 8px;
+    display: inline-block;
+    font-family: Roboto,arial,sans-serif;
+}
+.g-button::-moz-focus-inner {border:0;padding:0} /* remove default borders and paddings in firefox */
+.g-button.white {
+    background-color: #fff;
+    color: #404040;
+    border: 1px solid #d9d9d9;
+}
+.g-button.white:hover {
+    box-shadow: inset 0 -1px 0 #e6e6e6;
+    background-color: #fff;
+    border: 1px solid #b8b8b8;
+}
+.g-button.white:active {
+    box-shadow: inset 0 2px 0 #ddd;
+    background-color: #e5e5e5;
+    color: #262626;
+}
+.g-button.blue {
+    background-color: #427fed;
+}
+.g-button.blue:hover {
+    box-shadow: inset 0 -1px 0 #2f69c2;
+    background-color: #4285f4;
+    border-bottom-color: #2f69c2;
+}
+.g-button.blue:active {
+    box-shadow: inset 0 1px 0 #21448d;
+    background: #2c56b1;
+    border-top: 1px solid #21448d;
+}
+.g-button.red {
+    background-color: #d73d32;
+}
+.g-button.red:hover {
+    box-shadow: inset 0 -1px 0 #bd3d2a;
+    background-color: #e74b37;
+    border-bottom-color: #bd3d2a;
+}
+.g-button.red:active {
+    box-shadow: inset 0 1px 0 #9a3323;
+    background-color: #be3e2e;
+    border-top: 1px solid #9a3323;
+}
+.g-button.green {
+    background-color: #53a93f;
+}
+.g-button.green:hover {
+    box-shadow: inset 0 -1px 0 #4c8534;
+    background-color: #65b045;
+    border-bottom-color: #4c8534;
+}
+.g-button.green:active {
+    box-shadow: inset 0 1px 0 #2f6124;
+    background-color: #3e802f;
+    border-top: 1px solid #2f6124;
+}
+.g-button.orange {
+    background-color: #fb8521;
+}
+.g-button.orange:hover {
+    box-shadow: inset 0 -1px 0 #b96938;
+    background-color: #ff8b44;
+    border-bottom-color: #b96938;
+}
+.g-button.orange:active {
+    box-shadow: inset 0 1px 0 #9d541d;
+    background-color: #d77428;
+    border-top: 1px solid #9d541d;
+}
+.g-text {
+    background: #fff;
+    background-clip: padding-box;
+    border: 1px solid #cdcdcd;
+    border-color: rgba(0,0,0,.15);
+    height: 28px;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+.g-text:hover {
+    border: 1px solid #b9b9b9;
+    border-top-color: #a0a0a0;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+.g-text:focus {
+    border-color: #4285f4;
+    border: 1px solid #4d90fe;
+    outline: none;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+}
+
+
+
 #logincol{
   height:320px;
   width:300px;
