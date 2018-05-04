@@ -17,7 +17,7 @@ class UserOptions extends Component {
                     <br/>
                     <center><h2 id="label"> Tus Productos</h2></center>
                 </a>
-                <a href="/" className ="col-sm-3"  id="Option" >
+                <a href="/Ubication" className ="col-sm-3"  id="Option" >
                     <img id="Optionimg" src={MapsIcon}/>
                     <br/>
                     <center><h2 id="label"> Mapa</h2></center>
