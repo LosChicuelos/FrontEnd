@@ -25,9 +25,9 @@ class ProductsList extends Component {
 class Articles extends Component {
   componentWillMount(){
     if(this.props.user_id===undefined){
-      axios.get('http://backend-bsdiaza.c9users.io/articles').then(response => this.setState({articles: response.data}));
+      axios.get('https://backend-bsdiaza.c9users.io/articles').then(response => this.setState({articles: response.data}));
     }else{
-      axios.get('https://backend-bsdiaza.c9users.io/belongsuser?user_id='+this.props.user_id).then(response => this.setState({articles: response.data}));
+      axios.get('https://backend-bsdiaza.c9users.io/belongsuser?user_id='+1).then(response => this.setState({articles: response.data}));
     }
   }
   constructor(props) {

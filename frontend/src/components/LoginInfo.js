@@ -43,6 +43,7 @@ class LoginInfo extends Component {
         user.authenticate(data);
         if(!user.infoError){
             user.authenticateUser(data);
+
         }
         
         

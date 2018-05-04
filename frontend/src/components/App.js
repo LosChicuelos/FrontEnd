@@ -8,7 +8,7 @@ import UserMenu from './UserMenu';
 import ProductView from './ProductView';
 import Products from './Products';
 import AddProduct from './AddProduct';
-
+import Ubication from'./Ubication';
 const App = () => (
   <main>
     <Switch>
@@ -19,6 +19,9 @@ const App = () => (
       <Route exact path='/ProductView' component={ProductView}/>
       <Route exact path='/Products' component={Products}/>
       <Route exact path='/AddProduct' component={AddProduct}/>
+      
+      
+      <Route exact path='/Ubication' component={Ubication}/>
     </Switch>
   </main>
 )
