@@ -5,20 +5,14 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.1.0",
-<<<<<<< HEAD
     "firebase": "^4.13.1",
-=======
     "google-maps-react": "^2.0.2",
->>>>>>> f9900511ddc06db1d7c861a34e3d2b04f4ce8b4d
     "mobx-react": "^5.0.0",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.2.0",
-<<<<<<< HEAD
     "react-geolocated": "^2.3.2",
-=======
     "react-redux": "^5.0.7",
->>>>>>> a1c8b76f47861ab499679ac9c67aad79ecc67cca
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",
     "redux": "^3.7.2",

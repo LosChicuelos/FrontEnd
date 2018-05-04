@@ -84,15 +84,14 @@ class LoginInfo extends Component {
                 <center><input  type="password" ref="pass"id="Contraseña" name="Contraseña" className="inputText"/></center>
             </div>
             <center><button className="button button1" onClick={()=>this.authenticateLogin()}>Ingresar</button></center> 
-            <div onClick={this.onLoginUser}>Login User
+            <div onClick={this.onLoginUser}>              
+            
+            </div>
+
+            <div >
                 <button onClick={this.handleAuthG.bind(this)} class="g-button red">
                     {this.state.user ? this.state.user.email : "Accede con Google"}
-                </button>
-                <button
-                    onClick={this.handleLogout}
-                >
-                    Logout
-                </button>
+                </button>           
 
                 <button onClick={this.handleAuthF.bind(this)} class="g-button blue">
                     {this.state.user ? this.state.user.email : "Accede con Facebook"}
@@ -101,7 +100,12 @@ class LoginInfo extends Component {
                 <button onClick={this.handleAuthT.bind(this)} class="g-button green">
                     {this.state.user ? this.state.user.providerData.email : "Accede con Twitter"}
                 </button>
-            
+
+                 {/* <button
+                    onClick={this.handleLogout}
+                >
+                    Logout
+                </button> */}
             </div>
 
 
