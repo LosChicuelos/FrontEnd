@@ -26,20 +26,21 @@ class Statistics extends Component {
     if (global.param1 || global.param2 || global.param3 || global.param4){
       global.params = "?";
       if(global.param1){
-        global.params += "start_date=" + global.param1;
+        global.params += "max_price=" + global.param1;
       }
       if(global.param2){
-        global.params += "ending_date=" + global.param2;
+        global.params += "min_price=" + global.param2;
       }
       if(global.param3){
-        global.params += "max_price=" + global.param3;
+        global.params += "start_date=" + global.param3;
       }
       if(global.param4){
-        global.params += "min_price=" + global.param4;
+        global.params += "ending_date=" + global.param4;
       }
       this.setState({urlparam: "https://docs.google.com/viewer?url=https://backend-pipemax85.c9users.io/articles/user/3"+global.params+"&embedded=true"});
       this.forceUpdate();
-      document.getElementById('idframe').contentWindow.location.reload();
+      document.getElementById('idframe').contentWindow.postMessage("", '*'); 
+      
     }
   }
 
@@ -61,24 +62,20 @@ class Statistics extends Component {
   
   handleChange(event) {
     this.setState({value: event.target.value});
-    alert("Hola");
   }
   
   render() {
     return (
       <div className="container-full" id ="screen">
-      <h1>{this.state.urlparam}</h1>
         <div id ="display">
-          		    <Header value='normal'/>
-        <div> 
-        <input type="text" value={this.state.value} onChange={this.handleChange} />
-        </div>  		    
+        <Header value='normal'/>
+        {/* <h1>{this.state.urlparam}</h1> */}
         <div className="row" >
           <div className="col" >
-            <NameForm myCallback={this.setParam1} setParams={this.setParams} />
+            <NameForm myCallback={this.setParam1} setParams={this.setParams} nombreCampo="Precio maximo"  />
           </div>
           <div className="col" >
-            <NameForm myCallback={this.setParam2} setParams={this.setParams} />
+            <NameForm myCallback={this.setParam2} setParams={this.setParams} nombreCampo="Precio minimo" />
           </div>
           <div className="col" >
             <MyComponent />
@@ -121,7 +118,7 @@ class NameForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.myCallback("XDDXD");
+    this.myCallback(this.state.value);
     this.props.setParams();
   }
 
@@ -129,7 +126,7 @@ class NameForm extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          Name: {this.state.urlparam}
+          {this.props.nombreCampo}: {this.state.urlparam}
           <input type="text" value={this.state.value} onChange={this.handleChange} />
         </label>
         <input type="submit" value="Submit" />

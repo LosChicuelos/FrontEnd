@@ -10,15 +10,12 @@ class MyComponent extends React.Component {
       startDate: moment()
     };
     this.handleChange = this.handleChange.bind(this);
-        console.log("Holaaaa22")
   }
 
   handleChange(date) {
     this.setState({
       startDate: date
     });
-    alert(date);
-    console.log(date);
   }
 
   render() {

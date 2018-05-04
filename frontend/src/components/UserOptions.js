@@ -6,6 +6,7 @@ import AlliesIcon from '../assets/AlliesIcon.png';
 import EmailIcon from '../assets/EmailIcon.png';
 import BuyerIcon from '../assets/BuyerIcon.png';
 import ReportIcon from '../assets/ReportIcon.png';
+import StatisticsIcon from '../assets/StatisticsIcon.jpg';
 
 class UserOptions extends Component {
   render() {
@@ -45,6 +46,13 @@ class UserOptions extends Component {
                     <img id="Optionimg" src={ReportIcon}/>
                     <br/>
                     <center><h2 id="label"> Reportes</h2></center>
+                </a>
+            </div>
+            <div className="row">
+                <a href="/Statistics" className ="col-sm-3"  id="Option">
+                    <img id="Optionimg" src={StatisticsIcon}/>
+                    <br/>
+                    <center><h2 id="label"> Estadistica</h2></center>
                 </a>
             </div>
         </div>
