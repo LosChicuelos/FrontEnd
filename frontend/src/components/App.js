@@ -11,6 +11,7 @@ import AddProduct from './AddProduct';
 import Ubication from'./Ubication';
 import Statistics from './Statistics';
 import Reports from './Reports';
+import Messages from './Messages';
 const App = () => (
   <main>
     <Switch>
@@ -23,7 +24,7 @@ const App = () => (
       <Route exact path='/AddProduct' component={AddProduct}/>
       <Route exact path='/Reports' component={Reports}/>
       <Route exact path='/Statistics' component={Statistics}/>
-      
+      <Route exact path='/Messages' component={Messages}/>
       <Route exact path='/Ubication' component={Ubication}/>
     </Switch>
   </main>

@@ -9,7 +9,7 @@ import swal from 'sweetalert2';
     const string = /^[a-zA-Z]+$/;
     const number = /^[0-9]+$/;
     const cellphone = /^\d{10}$/;
-    const pass = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    const pass = /^[a-zA-Z]+$/;
     const email = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 
@@ -59,11 +59,11 @@ class User extends Component {
                 headers,
                 body: JSON.stringify(data)
             }
-            const request = new Request('http://backend-pipemax85.c9users.io/users',options);
+            const request = new Request('https://backend-pipemax85.c9users.io/users',options);
             const response = await fetch(request);
             const status = await response.status;
             if(status === 201){
-                const response = await fetch('http://backend-pipemax85.c9users.io/users');
+                const response = await fetch('https://backend-pipemax85.c9users.io/users');
                 console.log(await response.json());
             }
     }

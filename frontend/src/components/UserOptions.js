@@ -32,7 +32,7 @@ class UserOptions extends Component {
                 </a>
             </div>
             <div className="row">
-                <a href="/" className ="col-sm-3"  id="Option">
+                <a href="/Messages" className ="col-sm-3"  id="Option">
                     <img id="Optionimg" src={EmailIcon}/>
                     <br/>
                     <center><h2 id="label"> Mensajes</h2></center>
