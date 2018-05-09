@@ -9,7 +9,7 @@ import swal from 'sweetalert2';
     const string = /^[a-zA-Z]+$/;
     const number = /^[0-9]+$/;
     const cellphone = /^\d{10}$/;
-    const pass = /^[a-zA-Z]+$/;
+    const pass = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
     const email = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 
