@@ -16,9 +16,12 @@
     "react-geolocated": "^2.3.2",
     "react-moment": "^0.7.0",
     "react-redux": "^5.0.7",
+    "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
+    "react-router-redux": "^4.0.8",
     "react-scripts": "1.1.1",
     "redux": "^3.7.2",
+    "redux-persist": "^5.9.1",
     "sweetalert2": "^7.19.0"
   },
   "scripts": {

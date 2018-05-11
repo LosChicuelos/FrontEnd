@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import { persistStore, autoRehydrate } from 'redux-persist'
 import firebase from 'firebase'
 import { connect } from 'react-redux';
 import { loginUser } from '../Actions/UserActions';
 import swal from 'sweetalert2';
 import User from './User';
+import store from '../index.js';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../style/LoginInfo.css';
 
@@ -121,6 +123,7 @@ class LoginInfo extends Component {
         if(!user.infoError){
             const response = await user.authenticateUser(data);
             this.onLoginUser(await response);
+            persistStore(store);
     }
 
 

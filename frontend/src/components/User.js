@@ -41,7 +41,7 @@ class User extends Component {
             const swal = require('sweetalert2');
                 swal({
                   title: 'Error!',
-                  text: 'Do you want to continue',
+                  text: input,
                   type: 'error',
                   confirmButtonText: 'Cool'
                 })
@@ -59,11 +59,11 @@ class User extends Component {
                 headers,
                 body: JSON.stringify(data)
             }
-            const request = new Request('https://backend-pipemax85.c9users.io/users',options);
+            const request = new Request('https://backend-bsdiaza.c9users.io/users',options);
             const response = await fetch(request);
             const status = await response.status;
             if(status === 201){
-                const response = await fetch('https://backend-pipemax85.c9users.io/users');
+                const response = await fetch('https://backend-bsdiaza.c9users.io/users');
                 console.log(await response.json());
             }
     }
@@ -77,11 +77,10 @@ class User extends Component {
                 headers,
                 body: JSON.stringify(data)
             }
-            const request = new Request("http://backend-bsdiaza.c9users.io/sessions?email="+data.email+"&password="+data.password,options);
+            const request = new Request("https://backend-bsdiaza.c9users.io/sessions?email="+data.email+"&password="+data.password,options);
             const response = await fetch(request);
             const status = await response.status;
             if(status === 201){
-                window.location.replace("./UserMenu");
                 return (await response.json());
 
             }

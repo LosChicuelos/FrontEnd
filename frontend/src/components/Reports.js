@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import '../style/Products.css';
 import Header  from './Header';
 import Footer  from './Footer';
@@ -17,9 +18,9 @@ class Reports extends Component {
         <div className="row" >
   		    <div className="col">
             <center>
-              <object  height="600" width="900" data="https://backend-pipemax85.c9users.io/articles/user/3" type="application/pdf">
+              <object  height="600" width="900" data={"https://backend-bsdiaza.c9users.io/articles/user/"+this.props.user.id} type="application/pdf">
               <iframe height="600" width="900" 
-                src="https://docs.google.com/viewer?url=https://backend-pipemax85.c9users.io/articles/user/3&embedded=true"></iframe>
+                src={"https://docs.google.com/viewer?url=https://backend-bsdiaza.c9users.io/articles/user/"+this.props.user.id+"&embedded=true"}></iframe>
               </object>
            </center>
           <Footer/>
@@ -31,4 +32,9 @@ class Reports extends Component {
   }
 }
 
-export default Reports;
+const mapStateToProps = state => ({
+    user: state.user
+    
+});
+
+export default connect(mapStateToProps)(Reports);
