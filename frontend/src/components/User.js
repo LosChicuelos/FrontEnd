@@ -3,7 +3,7 @@
 /*global Request*/
 import React, { Component } from 'react';
 import swal from 'sweetalert2';
-
+import Home from './Home';
 
 
     const string = /^[a-zA-Z]+$/;
@@ -68,14 +68,22 @@ class User extends Component {
             }
     }
     async authenticateUser(data){
-            var xhttp = new XMLHttpRequest();
-              xhttp.onreadystatechange = function() {
-                console.log(this.responseText);
-              };
-              xhttp.open("POST", "http://backend-bsdiaza.c9users.io/sessions?email="+data.email+"&password="+data.password, true);
-              xhttp.send();
-              console.log(xhttp.responseText);
-              return xhttp.responseText;
+            const headers = new Headers();
+            headers.append('Content-Type','application/json');
+            
+            const options = {
+                method: 'POST',
+                headers,
+                body: JSON.stringify(data)
+            }
+            const request = new Request("http://backend-bsdiaza.c9users.io/sessions?email="+data.email+"&password="+data.password,options);
+            const response = await fetch(request);
+            const status = await response.status;
+            if(status === 201){
+                window.location.replace("./UserMenu");
+                return (await response.json());
+
+            }
     }
 }
 

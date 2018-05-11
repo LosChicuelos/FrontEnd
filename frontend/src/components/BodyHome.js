@@ -8,7 +8,7 @@ class BodyHome extends Component {
     return (
         <div className="col" id="bodycontainer">
             <Carousel />
-            <ProductsList value='false' />
+            <ProductsList type='complete' />
             <Footer />
         </div>
     );
