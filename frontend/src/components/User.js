@@ -59,15 +59,16 @@ class User extends Component {
                 headers,
                 body: JSON.stringify(data)
             }
-            const request = new Request('http://backend-bsdiaza.c9users.io/users',options);
+            const request = new Request('https://backend-pipemax85.c9users.io/users',options);
             const response = await fetch(request);
             const status = await response.status;
             if(status === 201){
-                const response = await fetch('http://backend-bsdiaza.c9users.io/users');
+                const response = await fetch('https://backend-pipemax85.c9users.io/users');
                 console.log(await response.json());
             }
     }
     async authenticateUser(data){
+
             const headers = new Headers();
             headers.append('Content-Type','application/json');
             

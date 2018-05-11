@@ -9,6 +9,9 @@ import ProductView from './ProductView';
 import Products from './Products';
 import AddProduct from './AddProduct';
 import Ubication from'./Ubication';
+import Statistics from './Statistics';
+import Reports from './Reports';
+import Messages from './Messages';
 const App = () => (
   <main>
     <Switch>
@@ -19,6 +22,12 @@ const App = () => (
       <Route exact path='/ProductView' component={ProductView}/>
       <Route exact path='/Products' component={Products}/>
       <Route exact path='/AddProduct' component={AddProduct}/>
+<<<<<<< HEAD
+=======
+      <Route exact path='/Reports' component={Reports}/>
+      <Route exact path='/Statistics' component={Statistics}/>
+      <Route exact path='/Messages' component={Messages}/>
+>>>>>>> a9c602d3494f853cb66219282940e82054bba743
       <Route exact path='/Ubication' component={Ubication}/>
     </Switch>
   </main>
