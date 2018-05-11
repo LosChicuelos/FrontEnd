@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import '../style/Products.css';
 
-class InputForm extends React.Component {
+class InputForm extends Component {
   constructor(props) {
     super(props);
     this.state = {value: ''};

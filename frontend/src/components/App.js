@@ -12,6 +12,7 @@ import Ubication from'./Ubication';
 import Statistics from './Statistics';
 import Reports from './Reports';
 import Messages from './Messages';
+import NewMessage from './NewMessage';
 const App = () => (
   <main>
     <Switch>
@@ -25,7 +26,7 @@ const App = () => (
       <Route exact path='/Reports' component={Reports}/>
       <Route exact path='/Statistics' component={Statistics}/>
       <Route exact path='/Messages' component={Messages}/>
-
+      <Route exact path='/NewMessage' component={NewMessage}/>
       <Route exact path='/Ubication' component={Ubication}/>
     </Switch>
   </main>
