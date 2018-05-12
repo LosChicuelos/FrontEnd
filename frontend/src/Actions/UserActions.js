@@ -3,9 +3,7 @@ export function loginUser(loggedUser){
     return{
         type: LOGIN_USER,
         payload: { 
-            user: {email: loggedUser.email,
-                    token: loggedUser.token
-            }
+            user: loggedUser
         }
     }
 }

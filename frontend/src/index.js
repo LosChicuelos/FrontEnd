@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { combineReducers, createStore } from 'redux';
+import { persistStore, autoRehydrate, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
 import { Provider } from 'react-redux';
 import userReducer from './Reducers/UserReducer.js';
 import './style/index.css';
@@ -20,19 +22,24 @@ import firebase from 'firebase'
   };
   firebase.initializeApp(config);
 
-
-const allReducers = combineReducers({
+const authPersistConfig = {
+  key: 'auth',
+  storage: storage,
+  blacklist: ['somethingTemporary']
+}
+const allReducers = persistReducer(authPersistConfig,combineReducers({
     user: userReducer
-})
+}))
 
 const store = createStore(
     allReducers,{
-        user: { email: '',
-                token: ''
+        user: {email:'',
+                id: -1
         }
     }, window.devToolsExtension && 
         window.devToolsExtension()
 );
+persistStore(store);
 
 
 ReactDOM.render(
@@ -43,3 +50,4 @@ ReactDOM.render(
     </Provider>
     , document.getElementById('root'));
 
+export default store;

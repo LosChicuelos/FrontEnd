@@ -65,10 +65,12 @@ class SignupInfo extends Component {
             email: this.refs.email.value,
             phone: this.refs.cellphone.value,
             password: this.refs.pass.value,
+            confirm_password: this.refs.pass.value,
             latitude: 2.3456464,
             langitude:1.5654646,
             name: this.refs.firstname.value,
-            lastname: this.refs.lastname.value
+            lastname: this.refs.lastname.value,
+
         }
         console.log(data);
         const user = new User();

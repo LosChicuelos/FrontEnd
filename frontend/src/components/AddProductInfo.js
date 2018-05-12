@@ -11,23 +11,27 @@ class AddProductInfo extends Component {
           <form method="POST" action="https://backend-bsdiaza.c9users.io/articles" >
             <div className="col">
               <br/><h1 className="labe">Nombre</h1>
-              <input type="text" name="name" placeholder="Nombre" className="inputText SingupInput"/>
+              <input type="text" name="article[name]" placeholder="Nombre" className="inputText SingupInput"/>
             </div>
             <div className="col">
               <h1 className="labe">Precio</h1>
-              <input type="text" name="price" placeholder="Precio" className="inputText SingupInput"/>
+              <input type="text" name="article[price]" placeholder="Precio" className="inputText SingupInput"/>
             </div>
             <div className="col">
               <h1 className="labe">Inventario</h1>
-              <input type="text" name="inventory" placeholder="Inventario" className="inputText SingupInput"/>            
+              <input type="text" name="article[inventory]" placeholder="Inventario" className="inputText SingupInput"/>            
             </div>
             <div className="col">
               <h1 className="labe">Descripción</h1>
-              <textarea name="description" placeholder="Descripción" className="inputText SingupInput"></textarea>
+              <input type="text"name="article[description]" placeholder="Descripción" className="inputText SingupInput"/>
             </div>
             <div className="col">
-              <h1 className="labe">Foto</h1>
-              <input type="file" name="fileToUpload" id="fileToUpload" className="inputText SingupInput"/>
+              <h1 className="labe">id</h1>
+              <input type="text"name="article[user_id]" placeholder="Descripción" className="inputText SingupInput"/>
+            </div>
+            <div className="col">
+              <h1 className="labe">cla</h1>
+              <input type="text"name="article[classification_id]" placeholder="Descripción" className="inputText SingupInput"/>
             </div>
             <div className="col">
               

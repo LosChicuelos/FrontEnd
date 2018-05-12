@@ -3,7 +3,7 @@
 /*global Request*/
 import React, { Component } from 'react';
 import swal from 'sweetalert2';
-
+import Home from './Home';
 
 
     const string = /^[a-zA-Z]+$/;
@@ -41,7 +41,7 @@ class User extends Component {
             const swal = require('sweetalert2');
                 swal({
                   title: 'Error!',
-                  text: 'Do you want to continue',
+                  text: input,
                   type: 'error',
                   confirmButtonText: 'Cool'
                 })
@@ -59,23 +59,31 @@ class User extends Component {
                 headers,
                 body: JSON.stringify(data)
             }
-            const request = new Request('https://backend-pipemax85.c9users.io/users',options);
+            const request = new Request('https://backend-bsdiaza.c9users.io/users',options);
             const response = await fetch(request);
             const status = await response.status;
             if(status === 201){
-                const response = await fetch('https://backend-pipemax85.c9users.io/users');
+                const response = await fetch('https://backend-bsdiaza.c9users.io/users');
                 console.log(await response.json());
             }
     }
     async authenticateUser(data){
-            var xhttp = new XMLHttpRequest();
-              xhttp.onreadystatechange = function() {
-                console.log(this.responseText);
-              };
-              xhttp.open("POST", "http://backend-pipemax85.c9users.io/sessions?email="+data.email+"&password="+data.password, true);
-              xhttp.send();
-              console.log(xhttp.responseText);
-              return xhttp.responseText;
+
+            const headers = new Headers();
+            headers.append('Content-Type','application/json');
+            
+            const options = {
+                method: 'POST',
+                headers,
+                body: JSON.stringify(data)
+            }
+            const request = new Request("https://backend-bsdiaza.c9users.io/sessions?email="+data.email+"&password="+data.password,options);
+            const response = await fetch(request);
+            const status = await response.status;
+            if(status === 201){
+                return (await response.json());
+
+            }
     }
 }
 

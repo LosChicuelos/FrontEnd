@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import { persistStore, autoRehydrate } from 'redux-persist'
 import firebase from 'firebase'
 import { connect } from 'react-redux';
 import { loginUser } from '../Actions/UserActions';
 import swal from 'sweetalert2';
 import User from './User';
+import store from '../index.js';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../style/LoginInfo.css';
 
@@ -20,8 +22,11 @@ class LoginInfo extends Component {
         this.state = {
           results: {}
         } 
+        this.onLoginUser = this.onLoginUser.bind(this);
       }
-
+    onLoginUser(UserInfo){
+        this.props.onLoginUser(UserInfo)
+    }
 
 
 
@@ -68,11 +73,10 @@ class LoginInfo extends Component {
     }  
 
 
-    onLoginUser(){
-        this.props.onLoginUser({email: 'adasdad', token: 'asdasda'});
-    }
+
 
   render() {
+      
     return (
         <div className="col align-self-center" id="logincol">
             <div className="label" id="usuario">
@@ -84,23 +88,19 @@ class LoginInfo extends Component {
                 <center><input  type="password" ref="pass"id="Contraseña" name="Contraseña" className="inputText"/></center>
             </div>
             <center><button className="button button1" onClick={()=>this.authenticateLogin()}>Ingresar</button></center> 
-            <div onClick={this.onLoginUser}>              
-            
-            </div>
-
             <div >
-                <button onClick={this.handleAuthG.bind(this)} class="g-button red">
+                <button onClick={this.handleAuthG.bind(this)} className="g-button red">
                     {this.state.user ? this.state.user.email : "Accede con Google"}
                 </button>           
 
-                <button onClick={this.handleAuthF.bind(this)} class="g-button blue">
+                <button onClick={this.handleAuthF.bind(this)} className="g-button blue">
                     {this.state.user ? this.state.user.email : "Accede con Facebook"}
                 </button>
 
-                <button onClick={this.handleAuthT.bind(this)} class="g-button green">
+                <button onClick={this.handleAuthT.bind(this)} className="g-button green">
                     {this.state.user ? this.state.user.providerData.email : "Accede con Twitter"}
                 </button>
-
+                {this.props.user.email}
                  {/* <button
                     onClick={this.handleLogout}
                 >
@@ -112,7 +112,7 @@ class LoginInfo extends Component {
         </div>
     );
   }
-       authenticateLogin(){
+     async authenticateLogin(){
          const data = {
             email: this.refs.email.value,
             password: this.refs.pass.value,
@@ -121,9 +121,12 @@ class LoginInfo extends Component {
         const user = new User();
         user.authenticate(data);
         if(!user.infoError){
-            user.authenticateUser(data);
+            const response = await user.authenticateUser(data);
+            this.onLoginUser(await response);
+            persistStore(store);
+    }
 
-        }
+
         
         
   }
@@ -131,12 +134,9 @@ class LoginInfo extends Component {
 }
 
 const mapStateToProps = state => ({
-    user:{  
-        email: state.user.email,
-        token: state.user.token
-    }
+    user: state.user
     
-})
+});
 const mapActionsToProps = {
     onLoginUser: loginUser
 }
