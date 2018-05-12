@@ -18,11 +18,11 @@ class Statistics extends Component {
       var iframe = document.getElementById('idframe');
       console.log(iframe)
       this.state = {
-        urlparam: "https://backend-pipemax85.c9users.io/articles/user/3"+this.props.location.search
+        urlparam: "https://back2-canietot.c9users.io/statistics/7"+this.props.location.search
       };
     } else {
       this.state = {
-        urlparam: "https://backend-pipemax85.c9users.io/articles/user/3"
+        urlparam: "https://back2-canietot.c9users.io/statistics/7"
       };
     }
   }
@@ -42,7 +42,7 @@ class Statistics extends Component {
       if(global.param4){
         global.params += "&ending_date=" + global.param4;
       }
-      this.setState({urlparam: "https://backend-pipemax85.c9users.io/articles/user/3"+global.params});
+      this.setState({urlparam: "http://back2-canietot.c9users.io/statistics/7"+global.params});
       //document.getElementById('idframe').contentWindow.postMessage("", '*'); 
     }
   }
