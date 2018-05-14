@@ -38,7 +38,12 @@ class Messages extends Component {
       );
     }else{
       if(this.props.parametros.includes("sender_id")){
-        axios.get('https://backend-bsdiaza.c9users.io/messagesbelongsuser?sender_id='+this.props.user_id).then(response => this.setState({messages: response.data}));
+        axios.get('https://backend-bsdiaza.c9users.io/messagesbelongsuser?sender_id='+this.props.user_id).then(response => 
+        {
+          console.log(response.data);
+          this.setState({messages: response.data})
+        }
+        );
       } else {
         axios.get('https://backend-bsdiaza.c9users.io/messagesbelongsuser?user_id='+this.props.user_id).then(response => 
         {
@@ -57,7 +62,7 @@ class Messages extends Component {
   render() {
     return(
       <div id="Articles"  className="col">
-        <h1>Mensajes</h1>
+        <h1>Mensajes {this.props.parametros.includes("sender_id")?'enviados':'recibidos'}</h1>
           <br/><br/>
         {this.state.messages.slice().map((info)=>
            <Message data={info}key={info.id}></Message>

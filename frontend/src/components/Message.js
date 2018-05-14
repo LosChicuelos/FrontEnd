@@ -7,8 +7,10 @@ class Message extends Component {
   }
   render(){
       return(
-        <div className ="col-sm-3"  id="Article" key = {this.props.value}>
+        <div className ="col-sm-5"  id="Article" key = {this.props.value}>
                 <center><h2>{this.props.data.topic}</h2></center>
+                <center><h2>{this.props.data.receivertemp?this.props.data.receivertemp.name:''}</h2></center>
+                <center><h2>{this.props.data.sendertemp?this.props.data.sendertemp.name:''}</h2></center>
                 <h4>Precio: ${this.props.data.content}</h4>
         </div>
       );
