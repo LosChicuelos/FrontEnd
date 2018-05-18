@@ -8,9 +8,11 @@ class Sale extends Component {
   render(){
       return(
         <div className ="col-sm-5"  id="Article" key = {this.props.value}>
-                <center><h2>{this.props.data.id}</h2></center>
-                <center><h2>{this.props.data.receivertemp?this.props.data.receivertemp.name:''}</h2></center>
-                <center><h2>{this.props.data.sendertemp?this.props.data.sendertemp.name:''}</h2></center>
+                <center><h2>Venta: {this.props.data.id}</h2></center>
+                <center><h2>Cantidad: {this.props.data.quantity}</h2></center>
+                <center><h2>{this.props.data.articletemp ? ('Articulo: ' + this.props.data.articletemp.name) : ''}</h2></center>
+                <center><h2>{this.props.data.sellertemp ? ('Vendedor: ' + this.props.data.sellertemp.name) : ''}</h2></center>
+                <center><h2>{this.props.data.buyertemp  ? ('Comprador:' + this.props.data.buyertemp.name)  : ''}</h2></center>
                 <h4>Total: ${this.props.data.amount}</h4>
         </div>
       );
