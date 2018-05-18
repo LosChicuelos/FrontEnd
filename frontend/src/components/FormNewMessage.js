@@ -55,6 +55,7 @@ class FormNewMessage extends Component {
         const data = {
             topic: this.refs.asunto.value,
             content: this.refs.contenido.value,
+            date :  new Date(),
             sender_id: 1,
             receiver_id: global.usuario
         }
@@ -75,12 +76,13 @@ class FormNewMessage extends Component {
         headers,
             body: JSON.stringify(data)
         }
-        const request = new Request('https://ide.c9.io/bsdiaza/backend/messages',options);
+        const request = new Request('https://backend-bsdiaza.c9users.io/messages',options);
         const response = await fetch(request);
         const status = await response.status;
         if(status === 201){
-            const response = await fetch('https://ide.c9.io/bsdiaza/backend/messages');
+            const response = await fetch('https://backend-bsdiaza.c9users.io/messages');
             console.log(await response.json());
+            window.location.replace("https://frontend-pipemax85.c9users.io/messages");
         }
     }
   
