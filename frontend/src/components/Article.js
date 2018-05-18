@@ -4,6 +4,7 @@
 import React, { Component } from 'react';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../style/Article.css';
+import { connect } from 'react-redux';
 class Article extends Component {
   constructor(props){
       super(props);
@@ -19,5 +20,9 @@ class Article extends Component {
   }
   
 }
+const mapStateToProps = state => ({
+  user: state.user
+  
+});
 
-export default Article;
+export default connect(mapStateToProps)(Article);

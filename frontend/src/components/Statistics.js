@@ -4,6 +4,7 @@ import Header  from './Header';
 import Footer  from './Footer';
 import DateForm from './DateForm';
 import InputForm from './InputForm';
+import { connect } from 'react-redux';
 
 class Statistics extends Component {
   
@@ -68,6 +69,13 @@ class Statistics extends Component {
   }
   
   render() {
+    if(this.props.user_id!==-1){
+      return(
+        <div id="Statistics"  className="col">
+          <h1>Cargando</h1>
+        </div>
+      );
+    }
     return (
       <div className="container-full" id ="screen">
         <div id ="display">
@@ -102,4 +110,9 @@ class Statistics extends Component {
   }
 }
 
-export default Statistics;
+const mapStateToProps = state => ({
+  user: state.user
+  
+});
+
+export default connect(mapStateToProps)(Statistics);

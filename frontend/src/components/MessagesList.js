@@ -3,6 +3,7 @@ import axios from 'axios';
 import Message from './Message.js';
 import '../style/ProductsList.css';
 import addIcon from '../assets/addIcon.png';
+import { connect } from 'react-redux';
 
 class MessagesList extends Component {
   
@@ -11,6 +12,13 @@ class MessagesList extends Component {
   }
   
   render() {
+    if(this.props.user_id!==-1){
+      return(
+        <div id="MessagesList"  className="col">
+          <h1>Cargando</h1>
+        </div>
+      );
+    }
     return (
         <div className="col" id="ProductsList">
           <br/>
@@ -89,4 +97,9 @@ class Add extends Component {
   }
   
 }
-export default MessagesList;
+const mapStateToProps = state => ({
+  user: state.user
+  
+});
+
+export default connect(mapStateToProps)(MessagesList);

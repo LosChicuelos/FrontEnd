@@ -3,6 +3,7 @@ import axios from 'axios';
 import Sale from './Sale.js';
 import '../style/ProductsList.css';
 import addIcon from '../assets/addIcon.png';
+import { connect } from 'react-redux';
 
 class SalesList extends Component {
   
@@ -37,15 +38,15 @@ class Sales extends Component {
       
       );
     }else{
-      if(this.props.parametros.includes("sender_id")){
-        axios.get('https://backend-bsdiaza.c9users.io/sales?sender_id='+this.props.user_id).then(response => 
+      if(!this.props.parametros.includes("sender_id")){
+        axios.get('https://backend-bsdiaza.c9users.io/salesbelongsuser?buyer_id='+this.props.user_id).then(response => 
         {
           console.log(response.data);
           this.setState({messages: response.data})
         }
         );
       } else {
-        axios.get('https://backend-bsdiaza.c9users.io/sales?user_id='+this.props.user_id).then(response => 
+        axios.get('https://backend-bsdiaza.c9users.io/salesbelongsuser?seller_id='+this.props.user_id).then(response => 
         {
           console.log(response.data);
           this.setState({messages: response.data});
@@ -89,4 +90,9 @@ class Add extends Component {
   }
   
 }
-export default SalesList;
+const mapStateToProps = state => ({
+  user: state.user
+  
+});
+
+export default connect(mapStateToProps)(SalesList);

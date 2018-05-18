@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
 import '../style/ProductInfo.css';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import { connect } from 'react-redux';
 
 class AddProductInfo extends Component {
   render() {
+    if(this.props.user_id!==-1){
+      return(
+        <div id="AddProductInfo"  className="col">
+          <h1>Cargando</h1>
+        </div>
+      );
+    }
     return (        
       <div className="col" id="body-Singup" align="center">
         
@@ -35,7 +43,7 @@ class AddProductInfo extends Component {
             </div>
             <div className="col">
                 <h1 className="labe">Foto</h1>
-                <input type="file" name="photo[file]" id="fileToUpload" className="inputText SingupInput"/>
+                <input type="file" name="article[picture]" id="fileToUpload" className="inputText SingupInput"/>
             </div>
             <div className="col">
               
@@ -52,4 +60,9 @@ class AddProductInfo extends Component {
     );
   }
 }
-export default AddProductInfo;
+const mapStateToProps = state => ({
+  user: state.user
+  
+});
+
+export default connect(mapStateToProps)(AddProductInfo);

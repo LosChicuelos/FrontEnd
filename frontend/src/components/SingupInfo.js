@@ -58,7 +58,9 @@ class SignupInfo extends Component {
     );
   }
      validateSingup(){
+
          const data = {user :{
+
             typeuser: "ADMINISTRADOR",
             iddocument: this.refs.id.value,
             typedocument: this.refs.idtype.value,
@@ -71,12 +73,23 @@ class SignupInfo extends Component {
             name: this.refs.firstname.value,
             lastname: this.refs.lastname.value,
 
+<<<<<<< HEAD
         }}
         console.log(user);
         const user = new User();
         user.validate(data.user);
         if(!user.infoError){
             user.addUser(data);
+=======
+        }
+    }
+
+        console.log(data);
+        const aux = new User();
+        aux.validate(data.user);
+        if(!aux.infoError){
+            aux.addUser(data);
+>>>>>>> 61d89f62542c6652be2b3c1fa83565260a0c9a6f
         }
         
         
