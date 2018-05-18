@@ -60,6 +60,7 @@ class SignupInfo extends Component {
      validateSingup(){
          const data = {
 
+
           user:
           {
             typeuser: "ADMINISTRADOR",
@@ -75,7 +76,7 @@ class SignupInfo extends Component {
             lastname: this.refs.lastname.value,
 
         }
-      }
+    }
 
         console.log(data);
         const aux = new User();

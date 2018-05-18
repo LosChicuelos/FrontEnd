@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
 import '../style/ProductInfo.css';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import { connect } from 'react-redux';
 
 class AddProductInfo extends Component {
   render() {
+    if(this.props.user_id!==-1){
+      return(
+        <div id="AddProductInfo"  className="col">
+          <h1>Cargando</h1>
+        </div>
+      );
+    }
     return (        
       <div className="col" id="body-Singup" align="center">
         
 
-          <form method="POST" action="http://127.0.0.1:3060/articles" encType="multipart/form-data">
+          <form method="POST" action="https://backend-bsdiaza.c9users.io/photos" >
             <div className="col">
               <br/><h1 className="labe">Nombre</h1>
               <input type="text" name="article[name]" placeholder="Nombre" className="inputText SingupInput"/>
@@ -41,9 +49,20 @@ class AddProductInfo extends Component {
               
               <button type="submit" className="inputText SingupInput">Send</button>
             </div>
+            
           </form>
+
+            
+        
     </div>
+
+    
     );
   }
 }
-export default AddProductInfo;
+const mapStateToProps = state => ({
+  user: state.user
+  
+});
+
+export default connect(mapStateToProps)(AddProductInfo);

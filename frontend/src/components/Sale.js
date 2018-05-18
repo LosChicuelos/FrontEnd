@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../style/Article.css';
+import { connect } from 'react-redux';
+
 class Sale extends Component {
   constructor(props){
       super(props);
   }
   render(){
+      if(this.props.user_id!==-1){
+        return(
+          <div id="Sale"  className="col">
+            <h1>Cargando</h1>
+          </div>
+        );
+      }
       return(
         <div className ="col-sm-5"  id="Article" key = {this.props.value}>
                 <center><h2>Venta: {this.props.data.id}</h2></center>
@@ -20,4 +29,9 @@ class Sale extends Component {
   
 }
 
-export default Sale;
+const mapStateToProps = state => ({
+  user: state.user
+  
+});
+
+export default connect(mapStateToProps)(Sale);
