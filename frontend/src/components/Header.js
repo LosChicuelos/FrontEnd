@@ -9,7 +9,7 @@ class Header extends Component {
         	</div>
         	<div className = "col"id="searchcol">
         		<input  type="text" name="search" className="inputText searchText" id="searchText"/>
-                <button className="roundedbutton"  id="searchbutton"> </button>
+                <a href="/search"><button className="roundedbutton"  id="searchbutton"> </button></a>
         	</div>
         	<SessionButtons value={this.props.value}/>
         </div>
