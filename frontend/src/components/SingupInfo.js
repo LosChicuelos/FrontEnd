@@ -58,7 +58,7 @@ class SignupInfo extends Component {
     );
   }
      validateSingup(){
-         const data = {
+         const data = {user :{
             typeuser: "ADMINISTRADOR",
             iddocument: this.refs.id.value,
             typedocument: this.refs.idtype.value,
@@ -71,10 +71,10 @@ class SignupInfo extends Component {
             name: this.refs.firstname.value,
             lastname: this.refs.lastname.value,
 
-        }
-        console.log(data);
+        }}
+        console.log(user);
         const user = new User();
-        user.validate(data);
+        user.validate(data.user);
         if(!user.infoError){
             user.addUser(data);
         }

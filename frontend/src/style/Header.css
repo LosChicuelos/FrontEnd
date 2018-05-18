@@ -48,15 +48,7 @@
 
     border: 2px solid green;
 }
-.button1:hover {
-   
-    background-color: #4CAF50; 
-    color: black; 
-    border: 2px solid #4CAF50;
-}
-.button1:active {
-  border:red;
-}
+
 .App {
   text-align: center;
 }

@@ -8,7 +8,7 @@ class Header extends Component {
           	    <a href="/"><img src="https://www.rawsonservices.com/wp-content/uploads/2014/05/Save-The-Nature.png" className="App-logo" alt="logo" /></a>
         	</div>
         	<div className = "col"id="searchcol">
-        		<input  type="text" name="Password" className="inputText searchText" id="searchText"/>
+        		<input  type="text" name="search" className="inputText searchText" id="searchText"/>
                 <button className="roundedbutton"  id="searchbutton"> </button>
         	</div>
         	<SessionButtons value={this.props.value}/>
