@@ -11,7 +11,7 @@ class Products extends Component {
         <div className="row" id ="display">
   		    <Header value='normal'/>
   		    <div className="col" id="Productsbodycontainer">
-            <ProductsList user_id='1'/>
+            <ProductsList />
             <Footer/>
           </div>
         </div>

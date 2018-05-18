@@ -8,7 +8,7 @@ class AddProductInfo extends Component {
       <div className="col" id="body-Singup" align="center">
         
 
-          <form method="POST" action="https://backend-bsdiaza.c9users.io/articles" >
+          <form method="POST" action="https://backend-bsdiaza.c9users.io/photos" >
             <div className="col">
               <br/><h1 className="labe">Nombre</h1>
               <input type="text" name="article[name]" placeholder="Nombre" className="inputText SingupInput"/>
@@ -32,6 +32,10 @@ class AddProductInfo extends Component {
             <div className="col">
               <h1 className="labe">cla</h1>
               <input type="text"name="article[classification_id]" placeholder="Descripción" className="inputText SingupInput"/>
+            </div>
+            <div className="col">
+                <h1 className="labe">Foto</h1>
+                <input type="file" name="photo[file]" id="fileToUpload" className="inputText SingupInput"/>
             </div>
             <div className="col">
               

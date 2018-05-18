@@ -25,7 +25,9 @@ class LoginInfo extends Component {
         this.onLoginUser = this.onLoginUser.bind(this);
       }
     onLoginUser(UserInfo){
-        this.props.onLoginUser(UserInfo)
+        console.log(UserInfo);
+        this.props.onLoginUser(UserInfo);
+        
     }
 
 
@@ -123,7 +125,7 @@ class LoginInfo extends Component {
         if(!user.infoError){
             const response = await user.authenticateUser(data);
             this.onLoginUser(await response);
-            persistStore(store);
+            window.location.href = '/UserMenu'; 
     }
 
 
