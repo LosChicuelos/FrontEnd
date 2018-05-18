@@ -8,7 +8,7 @@ class AddProductInfo extends Component {
       <div className="col" id="body-Singup" align="center">
         
 
-          <form method="POST" action="https://backend-bsdiaza.c9users.io/photos" >
+          <form method="POST" action="http://127.0.0.1:3060/articles" encType="multipart/form-data">
             <div className="col">
               <br/><h1 className="labe">Nombre</h1>
               <input type="text" name="article[name]" placeholder="Nombre" className="inputText SingupInput"/>
@@ -35,20 +35,14 @@ class AddProductInfo extends Component {
             </div>
             <div className="col">
                 <h1 className="labe">Foto</h1>
-                <input type="file" name="photo[file]" id="fileToUpload" className="inputText SingupInput"/>
+                <input type="file" name="article[picture]" id="fileToUpload" className="inputText SingupInput"/>
             </div>
             <div className="col">
               
               <button type="submit" className="inputText SingupInput">Send</button>
             </div>
-            
           </form>
-
-            
-        
     </div>
-
-    
     );
   }
 }
