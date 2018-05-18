@@ -1,4 +1,4 @@
-#body-Singup{
+#body-Message{
   height: 500px;
   width:60%;
   min-width: 590px;
@@ -10,8 +10,8 @@
 	border-radius:30px;
 }
 #row-1,#row-2{
-  margin-top: 15px;
-  height:75px;
+  margin-top: 5px;
+  height:25px;
   width:100%;
 }
 
@@ -19,7 +19,7 @@
   width:80%;
   max-width:250px;
 }
-.inputText{
+.inputTextM{
   width:80%;
   max-width:550px;
 }

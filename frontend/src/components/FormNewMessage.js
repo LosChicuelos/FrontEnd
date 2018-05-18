@@ -23,7 +23,7 @@ class FormNewMessage extends Component {
     
   render() {
     return (
-            <div className="row" id="body-Singup">
+            <div className="row" id="body-Message">
                 <div className="row" id="row-2">
                     <div className="col ">
                         <center><h1 className="labe">Usuario</h1></center>
@@ -35,7 +35,7 @@ class FormNewMessage extends Component {
                 <div className="row" id="row-1">
                     <div className="col ">
                         <center><h1 className="labe">Asunto</h1></center>
-                        <center><input  type="text" ref="asunto" name="nombre" className="inputText"/></center>
+                        <center><input  type="text" ref="asunto" name="nombre" className="inputTextM"/></center>
                     </div>
                 </div>
                 <div className="row" id="row-2">
