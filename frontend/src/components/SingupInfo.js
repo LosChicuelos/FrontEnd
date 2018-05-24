@@ -51,7 +51,7 @@ class SignupInfo extends Component {
                     </div>
                 </div>
                 <div className="col" id="row-2">
-                    <center><button className="button button1"onClick={()=>this.validateSingup()}>Regsistar</button></center>
+                    <center><button className="button button1"onClick={()=>this.validateSingup()}>Registrar</button></center>
                 </div>
             </div>
       
@@ -73,23 +73,12 @@ class SignupInfo extends Component {
             name: this.refs.firstname.value,
             lastname: this.refs.lastname.value,
 
-<<<<<<< HEAD
         }}
         console.log(user);
         const user = new User();
         user.validate(data.user);
         if(!user.infoError){
             user.addUser(data);
-=======
-        }
-    }
-
-        console.log(data);
-        const aux = new User();
-        aux.validate(data.user);
-        if(!aux.infoError){
-            aux.addUser(data);
->>>>>>> 61d89f62542c6652be2b3c1fa83565260a0c9a6f
         }
         
         
