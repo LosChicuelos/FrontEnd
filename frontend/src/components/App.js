@@ -15,6 +15,7 @@ import Messages from './Messages';
 import Sales from './Sales';
 import NewMessage from './NewMessage';
 import NewSale from './NewSale';
+import Search from './Search';
 const App = () => (
   <main>
     <Switch>
@@ -32,6 +33,7 @@ const App = () => (
       <Route exact path='/Sales' component={Sales}/>
       <Route exact path='/NewSale' component={NewSale}/>
       <Route exact path='/Ubication' component={Ubication}/>
+      <Route exact path='/Search' component={Search}/>
     </Switch>
   </main>
 )
