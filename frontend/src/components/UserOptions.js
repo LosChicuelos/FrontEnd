@@ -26,7 +26,7 @@ class UserOptions extends Component {
                     <br/>
                     <center><h2 id="label"> Mapa</h2></center>
                 </a>
-                <a href="/" className ="col-sm-3"  id="Option">
+                <a href="/Alliances" className ="col-sm-3"  id="Option">
                     <img id="Optionimg" src={AlliesIcon}/>
                     <br/>
                     <center><h2 id="label"> Aliados</h2></center>
