@@ -8,7 +8,7 @@ class Sale extends Component {
       super(props);
   }
   render(){
-      if(this.props.user_id!==-1){
+      if(this.props.user_id===-1){
         return(
           <div id="Sale"  className="col">
             <h1>Cargando</h1>
@@ -17,7 +17,8 @@ class Sale extends Component {
       }
       return(
         <div className ="col-sm-5"  id="Article" key = {this.props.value}>
-                <center><h2>Venta: {this.props.data.id}</h2></center>
+                <center><h2>{this.props.data.id}</h2></center>
+                <center><h2>{this.props.data.created_at.substring(0,10)}</h2></center>
                 <center><h2>Cantidad: {this.props.data.quantity}</h2></center>
                 <center><h2>{this.props.data.articletemp ? ('Articulo: ' + this.props.data.articletemp.name) : ''}</h2></center>
                 <center><h2>{this.props.data.sellertemp ? ('Vendedor: ' + this.props.data.sellertemp.name) : ''}</h2></center>
