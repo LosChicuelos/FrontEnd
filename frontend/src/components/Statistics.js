@@ -19,11 +19,11 @@ class Statistics extends Component {
       var iframe = document.getElementById('idframe');
       console.log(iframe)
       this.state = {
-        urlparam: "https://backend-bsdiaza.c9users.io/statistics/3"+this.props.location.search
+        urlparam: "http://127.0.0.1:3060/statistics/3"+this.props.location.search
       };
     } else {
       this.state = {
-        urlparam: "https://backend-bsdiaza.c9users.io/statistics/3"
+        urlparam: "http://127.0.0.1:3060/statistics/3"
       };
     }
   }
@@ -43,7 +43,7 @@ class Statistics extends Component {
       if(global.param4){
         global.params += "&ending_date=" + global.param4;
       }
-      this.setState({urlparam: "https://backend-bsdiaza.c9users.io/statistics/3"+global.params});
+      this.setState({urlparam: "http://127.0.0.1:3060/statistics/3"+global.params});
       //document.getElementById('idframe').contentWindow.postMessage("", '*'); 
     }
   }
@@ -69,13 +69,13 @@ class Statistics extends Component {
   }
   
   render() {
-    if(this.props.user_id!==-1){
-      return(
-        <div id="Statistics"  className="col">
-          <h1>Cargando</h1>
-        </div>
-      );
-    }
+    // if(this.props.user_id!==-1){
+    //   return(
+    //     <div id="Statistics"  className="col">
+    //       <h1>Cargando</h1>
+    //     </div>
+    //   );
+    // }
     return (
       <div className="container-full" id ="screen">
         <div id ="display">

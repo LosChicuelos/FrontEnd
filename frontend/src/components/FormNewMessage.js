@@ -76,13 +76,13 @@ class FormNewMessage extends Component {
         headers,
             body: JSON.stringify(data)
         }
-        const request = new Request('https://backend-bsdiaza.c9users.io/messages',options);
+        const request = new Request('http://127.0.0.1:3060/messages',options);
         const response = await fetch(request);
         const status = await response.status;
         if(status === 201){
-            const response = await fetch('https://backend-bsdiaza.c9users.io/messages');
+            const response = await fetch('http://127.0.0.1:3060/messages');
             console.log(await response.json());
-            window.location.replace("https://frontend-pipemax85.c9users.io/messages");
+            window.location.replace("http://127.0.0.1:3000/messages");
         }
     }
   
@@ -101,7 +101,7 @@ class App extends React.Component {
     
     constructor(props){
         super(props);
-        axios.get('https://backend-bsdiaza.c9users.io/users').then(
+        axios.get('http://127.0.0.1:3060/users').then(
         response => {
             const users = response.data;
             console.log(users);

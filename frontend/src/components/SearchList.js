@@ -14,7 +14,7 @@ import addIcon from '../assets/addIcon.png';
 
 class SearchList extends Component {
   bufferArticles(){
-      axios.get('https://backend-bsdiaza.c9users.io/filter?search='+this.props.filterText).then(response => this.setState({articles: response.data, status: response.status, search: this.props.filterText}));
+      axios.get('http://127.0.0.1:3060/filter?search='+this.props.filterText).then(response => this.setState({articles: response.data, status: response.status, search: this.props.filterText}));
       
   }
   constructor(props) {

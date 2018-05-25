@@ -59,11 +59,11 @@ class User extends Component {
                 headers,
                 body: JSON.stringify(data)
             }
-            const request = new Request('https://backend-bsdiaza.c9users.io/users',options);
+            const request = new Request('http://127.0.0.1:3060/users',options);
             const response = await fetch(request);
             const status = await response.status;
             if(status === 201){
-                const response = await fetch('https://backend-bsdiaza.c9users.io/users');
+                const response = await fetch('http://127.0.0.1:3060/users');
                 console.log(await response.json());
             }
     }
@@ -77,7 +77,7 @@ class User extends Component {
                 headers,
                 body: JSON.stringify(data)
             }
-            const request = new Request("https://backend-bsdiaza.c9users.io/sessions?email="+data.email+"&password="+data.password,options);
+            const request = new Request("http://127.0.0.1:3060/sessions?email="+data.email+"&password="+data.password,options);
             const response = await fetch(request);
             const status = await response.status;
             if(status === 201){

@@ -10,13 +10,13 @@ class Messages extends Component {
     this.state = { parametros: this.props.location.search} ;
   }
   render() {
-    if(this.props.user_id!==-1){
-      return(
-        <div id="Messages"  className="col">
-          <h1>Cargando</h1>
-        </div>
-      );
-    }
+    // if(this.props.user_id!==-1){
+    //   return(
+    //     <div id="Messages"  className="col">
+    //       <h1>Cargando</h1>
+    //     </div>
+    //   );
+    // }
     return (
       <div className="container-full" id ="screen">
         <div className="row" id ="display">

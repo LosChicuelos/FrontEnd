@@ -5,18 +5,18 @@ import { connect } from 'react-redux';
 
 class AddProductInfo extends Component {
   render() {
-    if(this.props.user_id!==-1){
-      return(
-        <div id="AddProductInfo"  className="col">
-          <h1>Cargando</h1>
-        </div>
-      );
-    }
+    // if(this.props.user_id!==-1){
+    //   return(
+    //     <div id="AddProductInfo"  className="col">
+    //       <h1>Cargando</h1>
+    //     </div>
+    //   );
+    // }
     return (        
       <div className="col" id="body-Singup" align="center">
         
 
-          <form method="POST" action="https://backend-bsdiaza.c9users.io/photos" >
+          <form method="POST" action="http://127.0.0.1:3060/articles" enctype="multipart/form-data" >
             <div className="col">
               <br/><h1 className="labe">Nombre</h1>
               <input type="text" name="article[name]" placeholder="Nombre" className="inputText SingupInput"/>
@@ -43,7 +43,7 @@ class AddProductInfo extends Component {
             </div>
             <div className="col">
                 <h1 className="labe">Foto</h1>
-                <input type="file" name="article[picture]" id="fileToUpload" className="inputText SingupInput"/>
+                <input type="file" multiple="multiple" name="article[picture]" id="fileToUpload"/>
             </div>
             <div className="col">
               
