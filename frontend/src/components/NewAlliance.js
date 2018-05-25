@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../style/Singup.css';
 import Header from './Header';
-import FormNewSale from './FormNewSale'
+import FormNewAlliance from './FormNewAlliance'
 import { connect } from 'react-redux';
-class NewSale extends Component {
+class NewAlliance extends Component {
   render() {
     if(this.props.user_id===-1){
       return(
-        <div id="NewSale"  className="col">
+        <div id="NewAlliance"  className="col">
           <h1>Cargando</h1>
         </div>
       );
@@ -18,7 +18,7 @@ class NewSale extends Component {
     <div className="container-fluid" id ="screenSingup">
         <div className="row" id ="screenSingup">
   		    <Header value='normal'/>
-            <FormNewSale />
+            <FormNewAlliance />
         </div>
     </div>
       
@@ -31,4 +31,4 @@ const mapStateToProps = state => ({
   
 });
 
-export default connect(mapStateToProps)(NewSale);
+export default connect(mapStateToProps)(NewAlliance);

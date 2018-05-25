@@ -27,8 +27,7 @@ class User extends Component {
         this.validateInput(data.lastname,string);
         this.validateInput(data.iddocument,number);
         this.validateInput(data.email,email);
-        this.validateInput(data.phone,cellphone);    
-        this.validateInput(data.password,pass);
+        this.validateInput(data.phone,cellphone);   
         
         
   }

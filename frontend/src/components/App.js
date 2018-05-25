@@ -13,6 +13,8 @@ import Statistics from './Statistics';
 import Reports from './Reports';
 import Messages from './Messages';
 import Sales from './Sales';
+import Alliances from './Alliances';
+import NewAlliance from './NewAlliance';
 import NewMessage from './NewMessage';
 import NewSale from './NewSale';
 import Search from './Search';
@@ -32,6 +34,8 @@ const App = () => (
       <Route exact path='/NewMessage' component={NewMessage}/>
       <Route exact path='/Sales' component={Sales}/>
       <Route exact path='/NewSale' component={NewSale}/>
+      <Route exact path='/NewAlliance' component={NewAlliance}/>
+      <Route exact path='/Alliances' component={Alliances}/>
       <Route exact path='/Ubication' component={Ubication}/>
       <Route exact path='/Search' component={Search}/>
     </Switch>

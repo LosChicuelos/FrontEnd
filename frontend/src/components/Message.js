@@ -8,13 +8,13 @@ class Message extends Component {
   }
   render(){
 
-      // if(this.props.user_id!==-1){
-      //   return(
-      //     <div id="Message"  className="col">
-      //       <h1>Cargando</h1>
-      //     </div>
-      //   );
-      // }
+      if(this.props.user_id===-1){
+        return(
+          <div id="Message"  className="col">
+            <h1>Cargando</h1>
+          </div>
+        );
+      }
       return(
         <div className ="col-sm-5"  id="Article" key = {this.props.value}>
                 <center><h2>{this.props.data.topic}</h2></center>

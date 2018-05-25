@@ -51,7 +51,7 @@ class SignupInfo extends Component {
                     </div>
                 </div>
                 <div className="col" id="row-2">
-                    <center><button className="button button1"onClick={()=>this.validateSingup()}>Regsistar</button></center>
+                    <center><button className="button button1"onClick={()=>this.validateSingup()}>Registrar</button></center>
                 </div>
             </div>
       
@@ -67,7 +67,6 @@ class SignupInfo extends Component {
             email: this.refs.email.value,
             phone: this.refs.cellphone.value,
             password: this.refs.pass.value,
-            confirm_password: this.refs.pass.value,
             latitude: 2.3456464,
             langitude:1.5654646,
             name: this.refs.firstname.value,

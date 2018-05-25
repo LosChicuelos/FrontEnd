@@ -68,7 +68,7 @@ class Articles extends Component {
         <h1>Productos</h1>
           <br/><br/>
         {this.state.articles.slice().map((info)=>
-           <Article data={info}key={info.id}></Article>
+           <Article data={info}key={info.id} ></Article>
         )}
         <a href="/AddProduct"><Add type={Articlestype}/></a>
       </div>
@@ -81,7 +81,7 @@ class Add extends Component {
     if(this.props.type!=='complete'){
     return(
       
-       <div className ="col-sm-3"  id="Article" key = {this.props.value}>
+       <div className ="col-sm-3"  id="Article" key = {this.props.value} >
                 <img id="Articleimg" src={addIcon}/>
                 <center><h2>Agregar producto</h2></center>
         </div>
@@ -89,7 +89,7 @@ class Add extends Component {
       return null;
     }
   }
-  
+  conso
 }
 
 

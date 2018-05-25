@@ -63,7 +63,7 @@ class Sales extends Component {
   render() {
     return(
       <div id="Articles"  className="col">
-        <h1>Ventas  </h1>
+        <h1>Compras-Ventas  </h1>
           <br/><br/>
         {this.state.messages.slice().map((info)=>
            <Sale data={info}key={info.id}></Sale>

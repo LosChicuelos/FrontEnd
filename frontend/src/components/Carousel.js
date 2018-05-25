@@ -5,11 +5,7 @@ class Carousel extends Component {
     return (
         <div className="col align-self-center" id="carouselcol">
               <div id="carousel" className="carousel slide" data-ride="carousel">
-                <ol className="carousel-indicators">
-                  <li data-target="#carousel" data-slide-to="0" className="active"></li>
-                  <li data-target="#carousel" data-slide-to="1"></li>
-                  <li data-target="#carousel" data-slide-to="2"></li>
-                </ol>
+
                 <div className="carousel-inner">
                   <div className="item active">
                     <img className="carouselimg" src="http://www.smartagro.cl/img/smartagro%20sensores.jpg" alt="anuncio1"/>

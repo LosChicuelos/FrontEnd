@@ -19,12 +19,11 @@ class SearchList extends Component {
   }
   constructor(props) {
     super(props);
-    this.state = { articles: [],status: 500, search:''} ;
+    this.state = { articles: [],status: 500, search:[]} ;
   }
   
   render() {
-      console.log("filter: " + this.props.filterText + ', state: '+ this.state.search  )
-    if(this.state.status===200&&this.state.search===this.props.filterText){
+    if(this.state.status===200&&this.state.search===this.props.filter){
       return(this.renderArticles())
     }else{
         if(this.props.filterText!==''&&this.state.search!==this.props.filterText){
