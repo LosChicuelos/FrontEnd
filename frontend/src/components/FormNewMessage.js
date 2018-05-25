@@ -82,7 +82,7 @@ class FormNewMessage extends Component {
         if(status === 201){
             const response = await fetch('https://backend-bsdiaza.c9users.io/messages');
             console.log(await response.json());
-            window.location.replace("https://frontend-pipemax85.c9users.io/messages");
+            window.location.replace("https://frontend-bsdiaza.c9users.io/messages");
         }
     }
   

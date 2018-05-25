@@ -55,6 +55,13 @@ class UserOptions extends Component {
                     <center><h2 id="label"> Estadistica</h2></center>
                 </a>
             </div>
+            <div className="row">
+                <a href="/Sales" className ="col-sm-3"  id="Option">
+                    <img id="Optionimg" src={StatisticsIcon}/>
+                    <br/>
+                    <center><h2 id="label"> Ventas</h2></center>
+                </a>
+            </div>
         </div>
     </div>
     );

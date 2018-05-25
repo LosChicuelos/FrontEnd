@@ -69,7 +69,7 @@ class Statistics extends Component {
   }
   
   render() {
-    if(this.props.user_id!==-1){
+    if(this.props.user_id===-1){
       return(
         <div id="Statistics"  className="col">
           <h1>Cargando</h1>

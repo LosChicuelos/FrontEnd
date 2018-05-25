@@ -11,7 +11,7 @@ class Sales extends Component {
     this.state = { parametros: this.props.location.search} ;
   }
   render() {
-    if(this.props.user_id!==-1){
+    if(this.props.user_id===-1){
       return(
         <div id="Message"  className="col">
           <h1>Cargando</h1>

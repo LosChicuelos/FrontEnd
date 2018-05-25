@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 class AddProductInfo extends Component {
   render() {
-    if(this.props.user_id!==-1){
+    if(this.props.user_id===-1){
       return(
         <div id="AddProductInfo"  className="col">
           <h1>Cargando</h1>
@@ -16,7 +16,7 @@ class AddProductInfo extends Component {
       <div className="col" id="body-Singup" align="center">
         
 
-          <form method="POST" action="https://backend-bsdiaza.c9users.io/photos" >
+          <form method="POST" action="https://backend-bsdiaza.c9users.io/articles" >
             <div className="col">
               <br/><h1 className="labe">Nombre</h1>
               <input type="text" name="article[name]" placeholder="Nombre" className="inputText SingupInput"/>

@@ -6,7 +6,7 @@ import FormNewMessage from './FormNewMessage'
 import { connect } from 'react-redux'; 
 class NewMessage extends Component {
   render() {
-    if(this.props.user_id!==-1){
+    if(this.props.user_id===-1){
       return(
         <div id="NewMessage"  className="col">
           <h1>Cargando</h1>

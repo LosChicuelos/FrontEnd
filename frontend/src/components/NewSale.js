@@ -6,7 +6,7 @@ import FormNewSale from './FormNewSale'
 import { connect } from 'react-redux';
 class NewSale extends Component {
   render() {
-    if(this.props.user_id!==-1){
+    if(this.props.user_id===-1){
       return(
         <div id="NewSale"  className="col">
           <h1>Cargando</h1>

@@ -5,6 +5,7 @@ import ProductsList from './ProductsList';
 import addIcon from '../assets/addIcon.png';
 import Footer from './Footer';
 class Products extends Component {
+
   render() {
     return (
       <div className="container-full" id ="screen">

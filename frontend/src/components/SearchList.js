@@ -14,17 +14,15 @@ import addIcon from '../assets/addIcon.png';
 
 class SearchList extends Component {
   bufferArticles(){
-      axios.get('https://backend-bsdiaza.c9users.io/filter?search='+this.props.filterText).then(response => this.setState({articles: response.data, status: response.status, search: this.props.filterText}));
-      
+      axios.get('https://backend-bsdiaza.c9users.io/filter?name='+this.props.filter.search+"&&min_price="+this.props.filter.min_price+"&&max_price="+this.props.filter.max_price).then(response => this.setState({articles: response.data, status: response.status, search: this.props.filter}));
   }
   constructor(props) {
     super(props);
-    this.state = { articles: [],status: 500, search:''} ;
+    this.state = { articles: [],status: 500, search:[]} ;
   }
   
   render() {
-      console.log("filter: " + this.props.filterText + ', state: '+ this.state.search  )
-    if(this.state.status===200&&this.state.search===this.props.filterText){
+    if(this.state.status===200&&this.state.search===this.props.filter){
       return(this.renderArticles())
     }else{
         if(this.props.filterText!==''&&this.state.search!==this.props.filterText){
