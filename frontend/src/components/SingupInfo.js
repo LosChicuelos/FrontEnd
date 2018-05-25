@@ -51,7 +51,7 @@ class SignupInfo extends Component {
                     </div>
                 </div>
                 <div className="col" id="row-2">
-                    <center><button className="button button1"onClick={()=>this.validateSingup()}>Regsistar</button></center>
+                    <center><button className="button button1"onClick={()=>this.validateSingup()}>Registrar</button></center>
                 </div>
             </div>
       
