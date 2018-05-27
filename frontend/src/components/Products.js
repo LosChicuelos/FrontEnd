@@ -10,8 +10,9 @@ class Products extends Component {
     return (
       <div className="container-full" id ="screen">
         <div className="row" id ="display">
-  		    <Header value='normal'/>
-  		    <div className="col" id="Productsbodycontainer">
+        <Header value='normal'/>
+          <div className="col" id="bodycontainer">
+  		    
             <ProductsList />
             <Footer/>
           </div>

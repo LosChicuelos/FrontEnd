@@ -102,7 +102,6 @@ class LoginInfo extends Component {
                 <button onClick={this.handleAuthT.bind(this)} className="g-button green">
                     {this.state.user ? this.state.user.providerData.email : "Accede con Twitter"}
                 </button>
-                {this.props.user.email}
                  {/* <button
                     onClick={this.handleLogout}
                 >

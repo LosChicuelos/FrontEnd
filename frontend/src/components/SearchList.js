@@ -5,7 +5,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Article from './Article.js';
-import '../style/ProductsList.css';
 import addIcon from '../assets/addIcon.png';
 
 
@@ -28,13 +27,17 @@ class SearchList extends Component {
         if(this.props.filterText!==''&&this.state.search!==this.props.filterText){
             this.bufferArticles();
         }
-      return null;
+      return(
+        <center>
+          <div className="loader"></div>
+        </center>
+        );
     
     }
   }
   renderArticles(){
     return(
-      <center><div id="Articles"  className="col">
+      <center><div id="realArticles"  className="col">
 
         {this.state.articles.slice().map((info)=>
            <Article data={info}key={info.id}></Article>

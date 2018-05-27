@@ -61,6 +61,7 @@ class ProductInfo extends Component {
               </div>
             </div>
             <div className="row">
+                
             </div>
         </div>
     </div>

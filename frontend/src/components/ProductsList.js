@@ -4,6 +4,7 @@
 /*global callback*/
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import ReactPaginate from 'react-paginate';
 import axios from 'axios';
 import Article from './Article.js';
 import '../style/ProductsList.css';
@@ -19,12 +20,26 @@ class ProductsList extends Component {
   render() {
     return (
         <div className="col" id="ProductsList">
-          <div id="center col-md-12">
+          <center><h1 id="productTitle">Productos</h1></center>
+          <br/><br/>
+          <div className="row">
             <br/>
-              <center>
                 <Articles user_id={this.props.user.id} type={this.props.type}/>
-              </center>
             </div>
+            <div className="col">
+            <center>
+              <div className="pagination">
+                <a href="#">&laquo;</a>
+                <a href="#">1</a>
+                <a className="active" href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">&raquo;</a>
+                </div>
+            </center>    
+          </div>
         </div>
     );
   }
@@ -64,13 +79,16 @@ class Articles extends Component {
   }
   renderArticles(Articlestype){
     return(
-      <div id="Articles"  className="col">
-        <h1>Productos</h1>
-          <br/><br/>
+      <div id="Articles"  className="col-lg-12">
+
+          <center>
+          <div className="col" id ="realArticles">
         {this.state.articles.slice().map((info)=>
            <Article data={info}key={info.id} ></Article>
         )}
         <a href="/AddProduct"><Add type={Articlestype}/></a>
+        </div>
+        </center>
       </div>
     );
   }
