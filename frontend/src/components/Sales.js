@@ -23,7 +23,7 @@ class Sales extends Component {
         <div className="row" id ="display">
   		    <Header value='normal'/>
   		    <div className="col" id="Productsbodycontainer">
-            <SalesList user_id={this.props.user_id} parametros={this.state.parametros} />
+            <SalesList user_id="1" parametros={this.state.parametros} />
             <Footer/>
           </div>
         </div>

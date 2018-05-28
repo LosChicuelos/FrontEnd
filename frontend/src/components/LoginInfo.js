@@ -187,11 +187,12 @@ class LoginInfo extends Component {
 
     verify (id){
 
-        return fetch('http://127.0.0.1:3060/users/'+id)
+        return fetch('http://127.0.0.1:3060/confirmation/?iduser='+id)
         .then(results => {
             return results.json();
         }).then(response => {
-            console.log("response", response)
+            console.log("ID", id)
+            console.log("respoooonse", response)
             return(response)        
         })     
     
@@ -209,10 +210,10 @@ class LoginInfo extends Component {
         user.authenticate(data);
         const nuserID = await this.NuserID(data);
         console.log("ID", nuserID)
-        const nuser = await this.verify(nuserID);
+        const nuser = await this.verify(await this.NuserID(data));
         
         console.log("nuser", nuser)
-        if (nuser.confirmation == "true"){      
+        if (nuser.confirmation === true){      
         
             if(!user.infoError){
                 const response = await user.authenticateUser(data);
