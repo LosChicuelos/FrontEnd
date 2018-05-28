@@ -16,49 +16,49 @@ class UserOptions extends Component {
     
         <div className="col" id ="OptionsCol">
             <div className="row">
-                <a href="/Products" className ="col-sm-2" id="Option" >
+                <a href="/Products" className ="col-lg-2" id="Option" >
                     <img id="Optionimg" src={ProductsLogo}/>
                     <br/>
                     <center><h2 id="label"> Tus Productos</h2></center>
                 </a>
-                <a href="/Ubication" className ="col-sm-2"  id="Option" >
+                <a href="/Ubication" className ="col-lg-2"  id="Option" >
                     <img id="Optionimg" src={MapsIcon}/>
                     <br/>
                     <center><h2 id="label"> Mapa</h2></center>
                 </a>
-                <a href="/Alliances" className ="col-sm-2"  id="Option">
+                <a href="/Alliances" className ="col-lg-2"  id="Option">
                     <img id="Optionimg" src={AlliesIcon}/>
                     <br/>
                     <center><h2 id="label"> Aliados</h2></center>
                 </a>
-                <a href="/Messages" className ="col-sm-2"  id="Option">
+                <a href="/Messages" className ="col-lg-2"  id="Option">
                     <img id="Optionimg" src={EmailIcon}/>
                     <br/>
                     <center><h2 id="label"> Mensajes</h2></center>
                 </a>
             </div>
             <div className="row">
-                <a href="/" className ="col-sm-2"  id="Option">
+                <a href="/" className ="col-lg-2"  id="Option">
                     <img id="Optionimg" src={BuyerIcon}/>
                     <br/>
                     <center><h2 id="label"> Posibles Vendedores</h2></center>
                 </a>
-                <a href="/Reports" className ="col-sm-2"  id="Option">
+                <a href="/Reports" className ="col-lg-2"  id="Option">
                     <img id="Optionimg" src={ReportIcon}/>
                     <br/>
                     <center><h2 id="label"> Reportes</h2></center>
                 </a>
-                <a href="/Statistics" className ="col-sm-2"  id="Option">
+                <a href="/Statistics" className ="col-lg-2"  id="Option">
                     <img id="Optionimg" src={StatisticsIcon}/>
                     <br/>
                     <center><h2 id="label"> Estadistica</h2></center>
                 </a>
-                <a href="/Sales" className ="col-sm-2"  id="Option">
+                <a href="/Sales" className ="col-lg-2"  id="Option">
                     <img id="Optionimg" src={SalesIcon}/>
                     <br/>
                     <center><h2 id="label"> Compras-Ventas</h2></center>
                 </a>
-                <a href="/Sales" className ="col-sm-2"  id="Option">
+                <a href="/Sales" className ="col-lg-2"  id="Option">
                     <img id="Optionimg" src={StatisticsIcon}/>
                     <br/>
                     <center><h2 id="label"> Ventas</h2></center>

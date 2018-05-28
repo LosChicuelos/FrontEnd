@@ -1,5 +1,5 @@
 #ProductsList{
-  height:700px;
+  height:1100px;
   width:85%;
 	min-width: 1220px;
 	background-color: rgba(217, 225, 226,0.6);
@@ -10,6 +10,9 @@
    display:block;
    overflow: scroll;
    padding: 0px;
+}
+#pagination{
+  max-width: 570px;
 }
 #center{
   width: 100%;

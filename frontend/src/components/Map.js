@@ -40,7 +40,7 @@ export class MapContainer extends Component {
       { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 },
     );
   }
-  onMarkerOver = (props, marker, e) =>
+  onMarkerClick = (props, marker, e) =>
     this.setState({
       selectedPlace: props,
       activeMarker: marker,
@@ -64,11 +64,12 @@ export class MapContainer extends Component {
             {this.state.users.slice().map((info)=>
               <Marker key={info.id}
                 data={info}
-                onClick={this.onMarkerOver.bind(this)}
-                onMouseout={this.onMarkerOut.bind(this)}
+                onClick={this.onMarkerClick.bind(this)}
                 position={{lat: info.latitude, lng: info.langitude}} />
             )} 
             <InfoWindow
+                onOpen={this.windowHasOpened}
+                onClose={this.windowHasClosed}
                 marker={this.state.activeMarker}
                 visible={this.state.showingInfoWindow}>
             <div>

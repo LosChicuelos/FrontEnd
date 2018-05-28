@@ -48,7 +48,18 @@
 
     border: 2px solid green;
 }
-
+.logout{
+  height: 80px;
+  width: 80px;
+  background-image: url(../assets/logout-icon.png);
+  background-size: 27px 27px;
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 20px;
+  left: 15px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.2s; /* Safari */
+}
 .App {
   text-align: center;
 }
@@ -56,6 +67,11 @@
 .App-logo {
   height: 80px;
   left:0;
+  
+}
+.home-logo {
+  height: 50px;
+  margin-top: 15px;
   
 }
 

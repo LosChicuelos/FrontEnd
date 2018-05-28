@@ -7,9 +7,9 @@ class Footer extends Component {
             <div className="container">
               <div className="row">
                 <ul>
-                  <li><label className="white-text" >Bogota, Colombia</label></li>
-                  <li><label className="white-text" >@copyright 2018</label></li>
-                  <li><label className="white-text" >https://github.com/orgs/LosChicuelos</label></li>
+                  <h3 className="white-text" >Bogota, Colombia</h3>
+                  <h3 className="white-text" >@copyright 2018</h3>
+                  <h3 className="white-text" >https://github.com/orgs/LosChicuelos</h3>
                 </ul>
               </div>
             </div>
