@@ -34,6 +34,7 @@ class LoginInfo extends Component {
 
     state = {
         user: null,
+        tempUser : [],
         
     }
 
@@ -47,7 +48,7 @@ class LoginInfo extends Component {
         var provider = new firebase.auth.GoogleAuthProvider()
         provider.addScope('https://www.googleapis.com/auth/plus.login')
 
-        firebase.auth().signInWithPopup(provider)
+        return firebase.auth().signInWithPopup(provider)
         .then(result => console.log(`${result.user.email} ha iniciado sesión`))
         .catch(error => console.log(`Error ${error.code}: ${error.message}`))
     }
@@ -63,13 +64,13 @@ class LoginInfo extends Component {
     handleAuthF () {
         var provider = new firebase.auth.FacebookAuthProvider();
 
-        firebase.auth().signInWithPopup(provider)
+        return firebase.auth().signInWithPopup(provider)
         .then(result => console.log(`${result.user.email} ha iniciado sesión`))
         .catch(error => console.log(`Error ${error.code}: ${error.message}`))
     }
 
     handleLogout () {
-        firebase.auth().signOut()
+        return firebase.auth().signOut()
         .then(result => console.log('Te has desconectado correctamente'))
         .catch(error => console.log(`Error ${error.code}: ${error.message}`))
     }  
@@ -91,19 +92,16 @@ class LoginInfo extends Component {
             </div>
             <center><button className="button button1" onClick={()=>this.authenticateLogin()}>Ingresar</button></center> 
             <div >
-                <button onClick={this.handleAuthG.bind(this)} className="g-button red">
+                <button onClick={()=>this.socialNetwork("G")} className="g-button red">
                     {this.state.user ? this.state.user.email : "Accede con Google"}
                 </button>           
 
-                <button onClick={this.handleAuthF.bind(this)} className="g-button blue">
+                <button onClick={()=>this.socialNetwork("F")} className="g-button blue">
                     {this.state.user ? this.state.user.email : "Accede con Facebook"}
                 </button>
 
-                <button onClick={this.handleAuthT.bind(this)} className="g-button green">
-                    {this.state.user ? this.state.user.providerData.email : "Accede con Twitter"}
-                </button>
-                {this.props.user.email}
-                 {/* <button
+                {/* {this.props.user.email}
+                 <button
                     onClick={this.handleLogout}
                 >
                     Logout
@@ -114,6 +112,93 @@ class LoginInfo extends Component {
         </div>
     );
   }
+
+    async socialNetwork (Letter){
+        if (Letter === "G"){
+            await this.handleAuthG()
+            
+            console.log("intentoooo")
+            const aux = await this.isDataBase (await this.state.user.email)
+            console.log("aux", this.state.user.email)
+            const Guser = {email: await this.state.user.email, id: {}}
+            
+            if (aux.rta === "true"){
+                Guser.id = aux.id
+                this.onLoginUser(await Guser);
+                window.location.href = '/UserMenu'; 
+            } else {
+                await this.handleLogout()
+                const swal = require('sweetalert2');
+                swal({
+                    title: 'Error!',
+                    text: "Sŕvase registrarse antes de iniciar sesión",
+                    type: 'error',
+                    confirmButtonText: 'Aceptar'
+                })
+            }
+        }else{
+            await this.handleAuthF()
+            const aux = await this.isDataBase (await this.state.user.email)
+            const Fuser = {email: await this.state.user.email, id: {}}
+            if (aux.rta === "true"){
+                Fuser.id = aux.id
+                this.onLoginUser(await Fuser);
+                window.location.href = '/UserMenu'; 
+            } else {
+                await this.handleLogout()
+                const swal = require('sweetalert2');
+                swal({
+                    title: 'Error!',
+                    text: "Sŕivase registrarse antes de iniciar sesión",
+                    type: 'error',
+                    confirmButtonText: 'Aceptar'
+                })
+            }
+
+        }
+        
+    }
+    isDataBase (email){
+
+        return fetch('http://127.0.0.1:3060/login?email='+email)
+        .then(results => {
+            return results.json();
+        }).then(response => {
+            console.log("response", response)
+            return(response)        
+        })     
+    
+    }
+
+
+
+
+    NuserID (data){
+
+        return fetch('http://127.0.0.1:3060/login?email='+data.email)
+        .then(results => {
+            return results.json();
+        }).then(response => {
+            console.log("response", response)
+            return(response.id)        
+        })     
+    
+    }
+
+    verify (id){
+
+        return fetch('http://127.0.0.1:3060/users/'+id)
+        .then(results => {
+            return results.json();
+        }).then(response => {
+            console.log("response", response)
+            return(response)        
+        })     
+    
+    }
+
+    
+
      async authenticateLogin(){
          const data = {
             email: this.refs.email.value,
@@ -122,16 +207,29 @@ class LoginInfo extends Component {
         console.log(data);
         const user = new User();
         user.authenticate(data);
-        if(!user.infoError){
-            const response = await user.authenticateUser(data);
-            this.onLoginUser(await response);
-            window.location.href = '/UserMenu'; 
+        const nuserID = await this.NuserID(data);
+        console.log("ID", nuserID)
+        const nuser = await this.verify(nuserID);
+        
+        console.log("nuser", nuser)
+        if (nuser.confirmation == "true"){      
+        
+            if(!user.infoError){
+                const response = await user.authenticateUser(data);
+                this.onLoginUser(await response);
+                window.location.href = '/UserMenu'; 
+            }
+
+        } else {
+            const swal = require('sweetalert2');
+            swal({
+                title: 'Error!',
+                text: "Verifique el mensaje de confirmación en su correo",
+                type: 'error',
+                confirmButtonText: 'Aceptar'
+            })
+        }
     }
-
-
-        
-        
-  }
   
 }
 

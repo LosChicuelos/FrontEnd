@@ -48,6 +48,22 @@ class User extends Component {
         }
   }
 
+
+  popUpAddUser (){
+    const swal = require('sweetalert2');
+    swal({
+        type: 'success',
+        title: 'Registro Exitoso',
+        text: "Le hemos enviado un mensaje de confirmación a su correo electrónico.",
+        confirmButtonText: 'Aceptar'
+
+    }).then((result) => {
+        if (result.value) {
+            window.location.href = '/';
+        }
+      })
+  }
+
     async addUser(data){
         
             const headers = new Headers();
@@ -62,10 +78,19 @@ class User extends Component {
             const response = await fetch(request);
             const status = await response.status;
             if(status === 201){
+                
                 const response = await fetch('http://127.0.0.1:3060/users');
                 console.log(await response.json());
+                
             }
+            
     }
+
+
+
+
+
+
     async authenticateUser(data){
 
             const headers = new Headers();
@@ -76,6 +101,9 @@ class User extends Component {
                 headers,
                 body: JSON.stringify(data)
             }
+            
+
+
             const request = new Request("http://127.0.0.1:3060/sessions?email="+data.email+"&password="+data.password,options);
             const response = await fetch(request);
             const status = await response.status;

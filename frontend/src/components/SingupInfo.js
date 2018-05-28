@@ -27,7 +27,11 @@ class SignupInfo extends Component {
                     </div>
                     <div className="col ">
                           <center><h1 className="labe">Tipo identificación</h1></center>
-                          <center><input  type="text" ref="idtype" name="idtype" className="inputText SingupInput"/></center>
+                          <center>
+                            <select ref="idtype" name="idtype" className="inputText SingupInput">
+                                <option value="CC">CC</option>
+                                <option value="NIT">NIT</option>
+                            </select></center>
                     </div>
                 </div>
                 <div className="row" id="row-2">
@@ -42,8 +46,12 @@ class SignupInfo extends Component {
                 </div>
                 <div className="row" id="row-2">
                     <div className="col ">
-                          <center><h1 className="labe">Usuario</h1></center>
-                          <center><input  type="text" ref="user" name="usuario" className="inputText SingupInput"/></center>
+                          <center><h1 className="labe">Tipo de Usuario</h1></center>
+                          <center>
+                            <select ref="typeuser" name="typeuser" className="inputText SingupInput">
+                                <option value="VENDEDOR">VENDEDOR</option>
+                                <option value="COMPRADOR">COMPRADOR</option>
+                            </select></center>
                     </div>
                     <div className="col ">
                           <center><h1 className="labe">Contraseña</h1></center>
@@ -61,7 +69,7 @@ class SignupInfo extends Component {
 
          const data = {user :{
 
-            typeuser: "ADMINISTRADOR",
+            typeuser: this.refs.typeuser.value,
             iddocument: this.refs.id.value,
             typedocument: this.refs.idtype.value,
             email: this.refs.email.value,
@@ -71,6 +79,7 @@ class SignupInfo extends Component {
             langitude:1.5654646,
             name: this.refs.firstname.value,
             lastname: this.refs.lastname.value,
+            confirmation: false
 
         }
     }
@@ -80,20 +89,25 @@ class SignupInfo extends Component {
         aux.validate(data.user);
         if(!aux.infoError){
             aux.addUser(data);
+            aux.popUpAddUser()            
         }
         
         
   }
   
-  validateInput(input,list){
-      if(list.test(input.value)){
+    validateInput(input,list){
+        if(list.test(input.value)){
+           
             return true;
         } else {
             alert(input.name+ ' invalido');
             return false;
         }
-  }
+    }
 
 }
+
+
+
 
 export default SignupInfo;

@@ -12,13 +12,13 @@ class Messages extends Component {
     console.log(queryString.parse(this.props.location.search));//manera de recibir los parametros del url
   }
   render() {
-    if(this.props.user_id===-1){
-      return(
-        <div id="Messages"  className="col">
-          <h1>Cargando</h1>
-        </div>
-      );
-    }
+    // if(this.props.user_id===-1){
+    //   return(
+    //     <div id="Messages"  className="col">
+    //       <h1>Cargando</h1>
+    //     </div>
+    //   );
+    // }
     return (
       <div className="container-full" id ="screen">
         <div className="row" id ="display">
