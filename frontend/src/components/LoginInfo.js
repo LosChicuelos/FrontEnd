@@ -187,7 +187,7 @@ class LoginInfo extends Component {
 
     verify (id){
 
-        return fetch('http://127.0.0.1:3060/confirmation/?iduser='+id)
+        return fetch('http://127.0.0.1:3060/users/'+id)
         .then(results => {
             return results.json();
         }).then(response => {

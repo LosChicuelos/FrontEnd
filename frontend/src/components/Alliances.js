@@ -29,7 +29,7 @@ class Alliances extends Component {
   		      <center><h2>Pendientes por revisar</h2></center></a>
   		      <a href="/Alliances?confirmno=no">
   		      <center><h2>En espera de respuesta</h2></center></a>
-            <AlliancesList user_id="1" parametros={this.state.parametros} />
+            <AlliancesList user_id={this.props.user_id} parametros={this.state.parametros} />
             <Footer/>
           </div>
         </div>
