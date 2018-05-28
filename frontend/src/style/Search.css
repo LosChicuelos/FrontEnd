@@ -1,32 +1,26 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 #sBodyCol{
-	min-width: 800px;
+
     margin-top:20px;
     margin-bottom: 100px;
-          height:auto;
-  width:85%;
-	background-color: rgba(200,200,200,0.8);
-	box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.7), 0 0px 20px 0 rgba(0, 0, 0, 0.9);
-	border-radius:40px;
-	   margin-left:auto;
    margin-right:auto;
-   padding:40px;
+   padding-top:40px;
+   margin-right: 5%;
 }
 #FiltersCol{
-    height: 450px;
-    left: 0px;
-    max-width: 30%;
-    border-right: 1px solid black;
-    height: auto;
+    height: 1000px;
+    max-width: 25%;
 }
 #PriceFilter{
     padding: 0px;
-    margin-top: 25px;
+    margin-top: 50px;
+    margin-bottom: 60px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
 }
 #filtersearchcol{
-    border-bottom: 1px solid grey;
+    margin-top: 80px;
     height: 60px;
 }
 
@@ -73,10 +67,9 @@ margin-top: 7px;
   background-repeat: no-repeat;
   background-position: center;
   position:absolute;
-  top: 0px;
-  left:230px;
   cursor: pointer;
   border-radius: 50%;
+  margin-left: 20px;
   -webkit-transition-duration: 0.2s; /* Safari */
   transition-duration: 0.2s;
 }
@@ -96,11 +89,47 @@ margin-top: 7px;
   margin-right: 10px;
   
 }
-#ResultCol{
-    padding: 0px;
-    right: 0px;
-    margin-left: 5%;
-    width: 10%;
-    height: 600px;
-    overflow: scroll;
+
+
+#fieldset{ margin-left: 5px; }
+
+.col-centered{
+    max-width: 120px;
+    width:120px;
 }
+/****** Style Star ratingS Widget *****/
+
+.ratingS { 
+  border: none;
+  float: left;
+}
+
+.ratingS > input { display: none; } 
+.ratingS > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.ratingS > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.ratingS > label { 
+  color: #ddd; 
+ float: right; 
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.ratingS > input:checked ~ label, /* show gold star when clicked */
+.ratingS:not(:checked) > label:hover, /* hover current star */
+.ratingS:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+.ratingS > input:checked + label:hover, /* hover current star when changing ratingS */
+.ratingS > input:checked ~ label:hover,
+.ratingS > label:hover ~ input:checked ~ label, /* lighten current selection */
+.ratingS > input:checked ~ label:hover ~ label { color: #FFED85;  } 

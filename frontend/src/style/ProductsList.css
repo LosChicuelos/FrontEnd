@@ -1,16 +1,27 @@
 #ProductsList{
-  height:700px;
+  height:1100px;
   width:85%;
-	min-width: 800px;
-	background-color: rgba(200,200,200,0.8);
+	min-width: 1220px;
+	background-color: rgba(217, 225, 226,0.6);
 	box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.7), 0 0px 20px 0 rgba(0, 0, 0, 0.9);
 	border-radius:40px;
 	   margin-left:auto;
    margin-right:auto;
    display:block;
    overflow: scroll;
+   padding: 0px;
+}
+#pagination{
+  max-width: 570px;
 }
 #center{
   width: 100%;
   margin: 0 auto;
+}
+#Articles{
+  width:100%;
+}
+#realArticles{
+  width: 100%;
+  margin: auto;
 }

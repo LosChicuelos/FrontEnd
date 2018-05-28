@@ -23,7 +23,13 @@ class Alliances extends Component {
         <div className="row" id ="display">
   		    <Header value='normal'/>
   		    <div className="col" id="Productsbodycontainer">
-            <AlliancesList user_id='1' parametros={this.state.parametros} />
+  		      <a href="/Alliances">
+  		      <center><h2>Alianzas hechas </h2></center></a>
+  		      <a href="/Alliances?confirmyes=si">
+  		      <center><h2>Pendientes por revisar</h2></center></a>
+  		      <a href="/Alliances?confirmno=no">
+  		      <center><h2>En espera de respuesta</h2></center></a>
+            <AlliancesList user_id={this.props.user_id} parametros={this.state.parametros} />
             <Footer/>
           </div>
         </div>

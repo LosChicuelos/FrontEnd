@@ -7,3 +7,14 @@ export function loginUser(loggedUser){
         }
     }
 }
+export function logoutUser(){
+    return{
+        type: LOGIN_USER,
+        payload: { 
+            user: {
+                email: '',
+                id: -1
+            }
+        }
+    }
+}
