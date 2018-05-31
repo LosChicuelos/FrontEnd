@@ -110,7 +110,16 @@ class User extends Component {
             if(status === 201){
                 return (await response.json());
 
-            }
+            } else {
+            
+                const swal = require('sweetalert2');
+                swal({
+                    title: 'Error!',
+                    text: "La información de registro es errónea. Verifíquela, por favor",
+                    type: 'error',
+                    confirmButtonText: 'Aceptar'
+                })
+        }
     }
 }
 

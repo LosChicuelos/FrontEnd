@@ -100,12 +100,12 @@ class LoginInfo extends Component {
                     {this.state.user ? this.state.user.email : "Accede con Facebook"}
                 </button>
 
-                {/* {this.props.user.email}
+                {this.props.user.email}
                  <button
                     onClick={this.handleLogout}
                 >
                     Logout
-                </button> */}
+                </button>
             </div>
 
 
@@ -119,19 +119,20 @@ class LoginInfo extends Component {
             
             console.log("intentoooo")
             const aux = await this.isDataBase (await this.state.user.email)
-            console.log("aux", this.state.user.email)
+            console.log("aux", aux)
             const Guser = {email: await this.state.user.email, id: {}}
             
-            if (aux.rta === "true"){
+            if (aux.rta === true){
                 Guser.id = aux.id
-                this.onLoginUser(await Guser);
-                window.location.href = '/UserMenu'; 
+                
+                this.verifyConfirmation(Guser.id, Guser);
+                 
             } else {
                 await this.handleLogout()
                 const swal = require('sweetalert2');
                 swal({
                     title: 'Error!',
-                    text: "Sŕvase registrarse antes de iniciar sesión",
+                    text: "Sírvase registrarse antes de iniciar sesión",
                     type: 'error',
                     confirmButtonText: 'Aceptar'
                 })
@@ -140,16 +141,16 @@ class LoginInfo extends Component {
             await this.handleAuthF()
             const aux = await this.isDataBase (await this.state.user.email)
             const Fuser = {email: await this.state.user.email, id: {}}
-            if (aux.rta === "true"){
-                Fuser.id = aux.id
-                this.onLoginUser(await Fuser);
-                window.location.href = '/UserMenu'; 
+            if (aux.rta === true){
+                Fuser.id = aux.id                
+                this.verifyConfirmation(Fuser.id, Fuser)
+                
             } else {
                 await this.handleLogout()
                 const swal = require('sweetalert2');
                 swal({
                     title: 'Error!',
-                    text: "Sŕivase registrarse antes de iniciar sesión",
+                    text: "Sírvase registrarse antes de iniciar sesión",
                     type: 'error',
                     confirmButtonText: 'Aceptar'
                 })
@@ -209,19 +210,39 @@ class LoginInfo extends Component {
         const user = new User();
         user.authenticate(data);
         const nuserID = await this.NuserID(data);
-        console.log("ID", nuserID)
-        const nuser = await this.verify(await this.NuserID(data));
+        console.log("ID-------------", user)
+        if(!user.infoError){
+            const response = await user.authenticateUser(data);
+            this.verifyConfirmation(nuserID,response)
+            
+                        
+        }else{
+            
+                const swal = require('sweetalert2');
+                swal({
+                    title: 'Error!',
+                    text: "La información de registro es errónea. Verifíquela, por favor",
+                    type: 'error',
+                    confirmButtonText: 'Aceptar'
+                })
+        }
         
-        console.log("nuser", nuser)
-        if (nuser.confirmation === true){      
         
-            if(!user.infoError){
-                const response = await user.authenticateUser(data);
-                this.onLoginUser(await response);
-                window.location.href = '/UserMenu'; 
-            }
+        
+    }
+
+    async verifyConfirmation(ID, data){
+
+        const nuser = await this.verify(ID);
+        if (nuser.confirmation === true){
+            this.onLoginUser(data);
+            window.location.href = '/UserMenu';
+            
+
 
         } else {
+            await this.handleLogout()
+            this.props.onLogoutUser
             const swal = require('sweetalert2');
             swal({
                 title: 'Error!',
@@ -233,6 +254,8 @@ class LoginInfo extends Component {
     }
   
 }
+
+
 
 const mapStateToProps = state => ({
     user: state.user
