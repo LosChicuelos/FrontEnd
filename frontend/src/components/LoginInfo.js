@@ -100,12 +100,12 @@ class LoginInfo extends Component {
                     {this.state.user ? this.state.user.email : "Accede con Facebook"}
                 </button>
 
-                {this.props.user.email}
+                {/* {this.props.user.email}
                  <button
                     onClick={this.handleLogout}
                 >
                     Logout
-                </button>
+                </button> */}
             </div>
 
 
@@ -214,17 +214,6 @@ class LoginInfo extends Component {
         if(!user.infoError){
             const response = await user.authenticateUser(data);
             this.verifyConfirmation(nuserID,response)
-            
-                        
-        }else{
-            
-                const swal = require('sweetalert2');
-                swal({
-                    title: 'Error!',
-                    text: "La información de registro es errónea. Verifíquela, por favor",
-                    type: 'error',
-                    confirmButtonText: 'Aceptar'
-                })
         }
         
         

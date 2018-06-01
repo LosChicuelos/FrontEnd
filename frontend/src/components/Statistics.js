@@ -15,17 +15,37 @@ class Statistics extends Component {
     global.param3 = "";
     global.param4 = "";
     global.params = "";
+    // if (this.props.location.search){
+    //   var iframe = document.getElementById('idframe');
+    //   console.log(iframe)
+    //   this.state = {
+    //     urlparam: "http://127.0.0.1:3060/statistics/"+this.props.user.id+this.props.location.search
+    //   };
+    // } else {
+    //   this.state = {
+    //     urlparam: "http://127.0.0.1:3060/statistics/"+this.props.user.id
+    //   };
+    // }
+  }
+  
+  setData(){
     if (this.props.location.search){
       var iframe = document.getElementById('idframe');
       console.log(iframe)
-      this.state = {
-        urlparam: "http://127.0.0.1:3060/statistics/3"+this.props.location.search
-      };
+      
+      return "http://127.0.0.1:3060/statistics/"+this.props.user.id+this.props.location.search
+      
     } else {
-      this.state = {
-        urlparam: "http://127.0.0.1:3060/statistics/3"
-      };
+      
+      return "http://127.0.0.1:3060/statistics/"+this.props.user.id
+      
     }
+  }
+
+
+  setID (){
+    console.log("PPPPPPPP", this.props.user.id)
+    return this.props.user.id
   }
   
   setParams = () =>  {
@@ -43,7 +63,7 @@ class Statistics extends Component {
       if(global.param4){
         global.params += "&ending_date=" + global.param4;
       }
-      this.setState({urlparam: "http://127.0.0.1:3060/statistics/3"+global.params});
+      this.setState({urlparam: "http://127.0.0.1:3060/statistics/"+this.props.user.id+global.params});
       //document.getElementById('idframe').contentWindow.postMessage("", '*'); 
     }
   }
@@ -69,13 +89,13 @@ class Statistics extends Component {
   }
   
   render() {
-    // if(this.props.user_id===-1){
-    //   return(
-    //     <div id="Statistics"  className="col">
-    //       <h1>Cargando</h1>
-    //     </div>
-    //   );
-    // }
+    if(this.props.user.id===-1){
+      return(
+        <div id="Statistics"  className="col">
+          <h1>Cargando</h1>
+        </div>
+      );
+    }
     return (
       <div className="container-full" id ="screen">
         <div id ="display">
@@ -98,7 +118,7 @@ class Statistics extends Component {
   		    <div className="col" id="Productsbodycontainer2">
             <center>
               <object  height="600" width="900"  data="myfile.pdf" type="application/pdf" 
-                data={this.state.urlparam}>
+                data={this.setData()}>
               </object>
            </center>
           <Footer/>

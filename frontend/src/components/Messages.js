@@ -25,8 +25,8 @@ class Messages extends Component {
   		    <Header value='normal'/>
   		    <div className="col" id="Productsbodycontainer">
   		      <a href="/Messages"><center><h2>Recibidos</h2></center></a>
-  		      <a href="/Messages?sender_id=1"><center><h2>Enviados</h2></center></a>
-            <MessagesList user_id={this.props.user_id} parametros={this.state.parametros} />
+  		      <a href={"/Messages?sender_id="+this.props.user.id}><center><h2>Enviados</h2></center></a>
+            <MessagesList user_id={this.props.user.id} parametros={this.state.parametros} />
             <Footer/>
           </div>
         </div>

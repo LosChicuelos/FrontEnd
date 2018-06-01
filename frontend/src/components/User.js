@@ -40,9 +40,9 @@ class User extends Component {
             const swal = require('sweetalert2');
                 swal({
                   title: 'Error!',
-                  text: input,
+                  text: input+ " No es un correo válido",
                   type: 'error',
-                  confirmButtonText: 'Cool'
+                  confirmButtonText: 'Aceptar'
                 })
             return false;
         }

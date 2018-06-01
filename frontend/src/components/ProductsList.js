@@ -29,9 +29,9 @@ class ProductsList extends Component {
   }
   buffer(){
     if(this.props.type==='complete'){
-      axios.get('https://backend-bsdiaza.c9users.io/pages?page_size=15').then(response => this.setState({ counter: response.data}));
+      axios.get('http://127.0.0.1:3060/pages?page_size=15').then(response => this.setState({ counter: response.data}));
     }else{
-      axios.get('https://backend-bsdiaza.c9users.io/belongsuserpages?user_id='+this.props.user.id+'&&page_size=20').then(response => this.setState({ counter: response.data}));
+      axios.get('http://127.0.0.1:3060/belongsuserpages?user_id='+this.props.user.id+'&&page_size=20').then(response => this.setState({ counter: response.data}));
   }
   }
 

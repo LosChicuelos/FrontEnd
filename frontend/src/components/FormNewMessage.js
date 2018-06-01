@@ -82,7 +82,7 @@ class FormNewMessage extends Component {
         if(status === 201){
             const response = await fetch('http://127.0.0.1:3060/messages');
             console.log(await response.json());
-            window.location.replace("http://127.0.0.1:3000/messages");
+            window.location.replace("http://localhost:3000/messages");
         }
     }
   

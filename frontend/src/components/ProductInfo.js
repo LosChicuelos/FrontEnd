@@ -3,7 +3,7 @@ import axios from 'axios';
 import '../style/ProductInfo.css';
 class ProductInfo extends Component {
   componentWillMount(){
-    axios.get('https://backend-bsdiaza.c9users.io/articles/'+this.props.article_id).then(response => this.setState({article: response.data, status: response.status}));
+    axios.get('http://127.0.0.1:3060/articles/'+this.props.article_id).then(response => this.setState({article: response.data, status: response.status}));
   }
   componentDidMount(){
     document.getElementById("star5").defaultChecked;
