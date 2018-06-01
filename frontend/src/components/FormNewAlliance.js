@@ -75,7 +75,7 @@ class FormNewAlliance extends Component {
         if(status === 201){
             const response = await fetch('http://127.0.0.1:3060/alliances');
             console.log(await response.json());
-            window.location.replace("http://localhost:3000/alliances");
+            window.location.replace("/alliances");
         }
     }
   

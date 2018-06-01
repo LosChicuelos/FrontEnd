@@ -121,7 +121,6 @@ class Statistics extends Component {
                 data={this.setData()}>
               </object>
            </center>
-          <Footer/>
           </div>
         </div>
         </div>

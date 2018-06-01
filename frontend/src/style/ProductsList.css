@@ -12,11 +12,18 @@
    padding: 0px;
 }
 #pagination{
-  max-width: 570px;
+  max-width: 590px;
+  margin-bottom:0;
 }
 #center{
   width: 100%;
   margin: 0 auto;
+}
+#center-pagination{
+  position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 #Articles{
   width:100%;

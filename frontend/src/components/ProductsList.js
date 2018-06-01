@@ -61,7 +61,7 @@ class ProductsList extends Component {
                 <Articles user_id={this.props.user.id} type={this.props.type} page={this.state.pages[this.state.selected]}/>
             </div>
             
-            <center>
+            <center id="center-pagination">
             <div className="col"id="pagination">
               <div className="pagination p12">
                 <ul>
@@ -155,12 +155,16 @@ class Articles extends Component {
   
   render() {
     if(this.state.page!==this.props.page){
+      this.setState({page: this.props.page, status: 500});
       if(this.props.type=='complete'){
            this.bufferArticles('complete');
         }else if(this.props.user_id!==-1){
            this.bufferArticles('user');
         }
-      
+        if(this.state.articles!==[]){
+          console.log("asdadas")
+          this.setState({articles: []})
+        }
     }
     if(this.state.status===200){
       return(this.renderArticles(this.props.type))
