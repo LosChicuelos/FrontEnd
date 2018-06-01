@@ -75,7 +75,7 @@ class FormNewAlliance extends Component {
         if(status === 201){
             const response = await fetch('https://backend-bsdiaza.c9users.io/alliances');
             console.log(await response.json());
-            window.location.replace("https://frontend-pipemax85.c9users.io/alliances");
+            window.location.replace("/alliances");
         }
     }
   

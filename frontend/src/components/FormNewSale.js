@@ -110,7 +110,7 @@ class FormNewMessage extends Component {
         if(status === 201){
             const response = await fetch('https://backend-bsdiaza.c9users.io/sales');
             console.log(await response.json());
-            window.location.replace("https://frontend-pipemax85.c9users.io/sales");
+            window.location.replace("/sales");
         }
     }
   

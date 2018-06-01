@@ -101,7 +101,6 @@ class Statistics extends Component {
                 data={this.state.urlparam}>
               </object>
            </center>
-          <Footer/>
           </div>
         </div>
         </div>

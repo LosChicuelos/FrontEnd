@@ -45,7 +45,7 @@ class Alliances extends Component {
             }
         );
       } else {
-        axios.get('https://backend-bsdiaza.c9users.io/alliancesbelongsuser?user_id='+this.props.user_id).then(response => 
+        axios.get('https://backend-bsdiaza.c9users.io/alliancesbelongsuser?user_id=12').then(response => 
             {   
                 console.log("normal");
                 console.log(response.data);

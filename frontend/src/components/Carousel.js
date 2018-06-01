@@ -14,7 +14,7 @@ class Carousel extends Component {
                     <img className="carouselimg" src="https://www.bbvafrances.com.ar/fbin/mult/carrousel-agro-convenios_tcm1303-653268.png" alt="anuncio2" />
                   </div>
                   <div className="item">
-                    <img className="carouselimg" src="http://www.agronet.gov.co/Noticias/PublishingImages/Bolet%C3%ADn%20Agro.jpg" alt="auncio3" />
+                    <img className="carouselimg" src="http://swiftplacements.com/wp-content/uploads/2016/01/agro_business.jpg" alt="auncio3" />
                   </div>
                 </div>
                 <a className="left carousel-control" href="#carousel" data-slide="prev">

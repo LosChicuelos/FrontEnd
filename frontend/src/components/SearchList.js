@@ -12,8 +12,11 @@ import addIcon from '../assets/addIcon.png';
 
 
 class SearchList extends Component {
+  
   bufferArticles(){
-      axios.get('https://backend-bsdiaza.c9users.io/filter?page_size=30&&name='+this.props.filter.search+"&&min_price="+this.props.filter.min_price+"&&max_price="+this.props.filter.max_price).then(response => this.setState({articles: response.data, status: response.status, search: this.props.filter}));
+    console.log("hiiiiii")
+    console.log(this.props.filter)
+      axios.get('https://backend-bsdiaza.c9users.io/filter?page_size=20&&name='+this.props.filter.search+"&&min_price="+this.props.filter.min_price+"&&max_price="+this.props.filter.max_price+"&&qualification="+this.props.filter.qualification).then(response => this.setState({articles: response.data, status: response.status, search: this.props.filter}));
   }
   constructor(props) {
     super(props);
