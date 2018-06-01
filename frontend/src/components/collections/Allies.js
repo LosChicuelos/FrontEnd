@@ -9,7 +9,7 @@ class Users{
     
     @action async fetchall(){
         this.isLoading=false;
-        const response = await fetch('http://backend-bsdiaza.c9users.io/users');
+        const response = await fetch('http://127.0.0.1:3060/users');
         const status = await response.status;
         if(status === 200){
             this.all = await response.json();
@@ -19,7 +19,7 @@ class Users{
     @action async getter(data){
         const headers = new Headers();
         headers.append('Content-Type', 'application/jason');
-        const request = new Request('http://backend-bsdiaza.c9users.io');
+        const request = new Request('http://127.0.0.1:3060');
         const option= {
             method: 'POST',
             headers,

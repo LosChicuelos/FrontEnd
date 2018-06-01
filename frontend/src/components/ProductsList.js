@@ -143,9 +143,9 @@ class Articles extends Component {
   
   bufferArticles(buffertype){
     if(buffertype==='complete'){
-      axios.get('https://backend-bsdiaza.c9users.io/articles?page_size=15&&page='+this.props.page).then(response => this.setState({articles: response.data, status: response.status,page: this.props.page}));
+      axios.get('http://127.0.0.1:3060/articles').then(response => this.setState({articles: response.data, status: response.status}));
     }else{
-      axios.get('https://backend-bsdiaza.c9users.io/belongsuser?user_id='+this.props.user_id+'&&page_size=12&&page='+this.props.page).then(response => this.setState({articles: response.data, status: response.status,page: this.props.page}));
+      axios.get('http://127.0.0.1:3060/belongsuser?user_id='+this.props.user_id).then(response => this.setState({articles: response.data, status: response.status}));
 }
   }
   constructor(props) {

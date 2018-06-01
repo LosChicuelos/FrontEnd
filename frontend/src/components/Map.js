@@ -22,7 +22,7 @@ export class MapContainer extends Component {
     };
   }
     componentWillMount(){
-      axios.get('https://backend-bsdiaza.c9users.io/users').then(response => this.setState({users: response.data}));
+      axios.get('http://127.0.0.1:3060/users').then(response => this.setState({users: response.data}));
   }
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(

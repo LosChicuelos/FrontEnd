@@ -18,6 +18,9 @@ import NewAlliance from './NewAlliance';
 import NewMessage from './NewMessage';
 import NewSale from './NewSale';
 import Search from './Search';
+import Confirmation from './Confirmation';
+import BuyerView from './BuyerView';
+import SellerView from './SellerView';
 const App = () => (
   <main>
     <Switch>
@@ -38,6 +41,10 @@ const App = () => (
       <Route exact path='/Alliances' component={Alliances}/>
       <Route exact path='/Ubication' component={Ubication}/>
       <Route exact path='/Search' component={Search}/>
+      <Route exact path='/Confirmation/:confirmationid' component={Confirmation}/>
+
+      <Route exact path='/SellerView' component={SellerView}/>
+      <Route exact path='/BuyerView' component={BuyerView}/>
     </Switch>
   </main>
 )

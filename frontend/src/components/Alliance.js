@@ -8,13 +8,13 @@ class Alliance extends Component {
       super(props);
   }
   render(){
-      if(this.props.user_id===-1){
-        return(
-          <div id="Alliance"  className="col">
-            <h1>Cargando</h1>
-          </div>
-        );
-      }
+      // if(this.props.user_id===-1){
+      //   return(
+      //     <div id="Alliance"  className="col">
+      //       <h1>Cargando</h1>
+      //     </div>
+      //   );
+      // }
       return(
         <div className ="col-sm-5"  id="Article" key = {this.props.value}>
                 <center><h2>{this.props.data.id}</h2></center>
