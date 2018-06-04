@@ -54,7 +54,7 @@ class Confirmation extends Component {
         const headers = new Headers();
         headers.append('Content-Type','application/json');
 
-
+            
             fetch('http://127.0.0.1:3060/confirmation?iduser='+this.props.match.params.confirmationid)
             .then(results => {
                 return results.json();
@@ -119,6 +119,7 @@ class Confirmation extends Component {
         
         return (
             <div>
+                
                 
                 {this.renderRedirect()}
                 

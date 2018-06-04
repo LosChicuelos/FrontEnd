@@ -18,9 +18,9 @@ class Reports extends Component {
         <div className="row" >
   		    <div className="col">
             <center>
-              <object  height="600" width="900" data={"https://backend-bsdiaza.c9users.io/articles/user/12"} type="application/pdf">
+              <object  height="600" width="900" data={"http://127.0.0.1:3060/articles/user/"+this.props.user.id} type="application/pdf">
               <iframe height="600" width="900" 
-                src={"https://docs.google.com/viewer?url=https://backend-bsdiaza.c9users.io/articles/user/12"+"&embedded=true"}></iframe>
+                src={"https://docs.google.com/viewer?url=http://http://127.0.0.1:3060/articles/user/"+this.props.user.id+"&embedded=true"}></iframe>
               </object>
            </center>
           </div>

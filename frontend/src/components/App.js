@@ -10,6 +10,7 @@ import Products from './Products';
 import AddProduct from './AddProduct';
 import Ubication from'./Ubication';
 import Statistics from './Statistics';
+import StatisticsExternal from './StatisticsExternal';
 import Reports from './Reports';
 import Messages from './Messages';
 import Sales from './Sales';
@@ -21,6 +22,8 @@ import Search from './Search';
 import Confirmation from './Confirmation';
 import BuyerView from './BuyerView';
 import SellerView from './SellerView';
+import Profile from './Profile';
+import ProductsListExternal from './ProductsListExternal';
 const App = () => (
   <main>
     <Switch>
@@ -42,9 +45,11 @@ const App = () => (
       <Route exact path='/Ubication' component={Ubication}/>
       <Route exact path='/Search' component={Search}/>
       <Route exact path='/Confirmation/:confirmationid' component={Confirmation}/>
-
+      <Route exact path='/StatisticsExternal' component={StatisticsExternal}/>
       <Route exact path='/SellerView' component={SellerView}/>
       <Route exact path='/BuyerView' component={BuyerView}/>
+      <Route exact path='/Profile' component={Profile}/>
+      <Route exact path='/ProductsListExternal' component={ProductsListExternal}/>
     </Switch>
   </main>
 )

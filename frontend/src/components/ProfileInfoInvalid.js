@@ -11,4 +11,4 @@ class ProfileInfo extends Component {
     );
   }
 }
-export default ProductInfo;
+export default ProfileInfo;

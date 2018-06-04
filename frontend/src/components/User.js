@@ -4,6 +4,7 @@
 import React, { Component } from 'react';
 import swal from 'sweetalert2';
 import Home from './Home';
+import axios from 'axios';
 
 
     const string = /^[a-zA-Z]+$/;
@@ -23,24 +24,25 @@ class User extends Component {
   }
      validate(data){
 
-        this.validateInput(data.name,string);
-        this.validateInput(data.lastname,string);
-        this.validateInput(data.iddocument,number);
-        this.validateInput(data.email,email);
-        this.validateInput(data.phone,cellphone);   
+        this.validateInput(data.name,string,"'Nombre'");
+        this.validateInput(data.lastname,string,"'Apellido'");
+        this.validateInput(data.iddocument,number,"'Identificacion'");
+        this.validateInput(data.email,email,"'Correo'");
+        this.validateInput(data.phone,cellphone,"'Teléfono'");
+        this.validateInput(data.password,string,"'Contraseña'");   
         
         
   }
   
-  validateInput(input,list){
+  validateInput(input,list,field){
       if(list.test(input)){
             return true;
         } else {
             this.infoError=true;
             const swal = require('sweetalert2');
                 swal({
-                  title: 'Error!',
-                  text: input+ " No es un correo válido",
+                  title:'Hay errores en el formulario',
+                  text: "Verifique la información ingresada en " + field,
                   type: 'error',
                   confirmButtonText: 'Aceptar'
                 })
@@ -80,11 +82,20 @@ class User extends Component {
             if(status === 201){
                 
                 const response = await fetch('http://127.0.0.1:3060/users');
-                console.log(await response.json());
+                console.log("respuesta", await response.json());
+
+                axios.get('http://127.0.0.1:3060/sendemail?email='+data.user.email)
+                .then(response =>{
+                    console.log("respuesta",response);
+                })
                 
             }
             
     }
+
+
+        
+
 
 
 

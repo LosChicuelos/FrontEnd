@@ -9,6 +9,8 @@ import axios from 'axios';
 import Article from './Article.js';
 import '../style/ProductsList.css';
 import addIcon from '../assets/addIcon.png';
+import Header from './Header';
+import * as qs from 'query-string';
 
 const mapStateToProps = state => ({
   user: state.user,
@@ -17,7 +19,7 @@ const mapStateToProps = state => ({
 });
 
 
-class ProductsList extends Component {
+class ProductsListExternal extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -32,14 +34,15 @@ class ProductsList extends Component {
       axios.get('http://127.0.0.1:3060/pages?page_size=15').then(response => this.setState({ counter: response.data }));
 
     } else {
-      axios.get('http://127.0.0.1:3060/belongsuserpages?user_id=' + this.props.user.id + '&&page_size=14').then(response => this.setState({ counter: response.data }));
+      axios.get('http://127.0.0.1:3060/belongsuserpages?user_id=' + qs.parse(this.props.location.search).id + '&&page_size=14').then(response => this.setState({ counter: response.data }));
 
     }
   }
 
 
   render() {
-    
+    console.log("Entra", qs.parse(this.props.location.search))
+
     if (this.props.rehydrate === false) {
       return (
         <div className="col">
@@ -57,7 +60,7 @@ class ProductsList extends Component {
       this.calculate_pages();
       console.log("Número de páginas", this.state.counter)
     }
-    
+
     if (this.state.counter == 0.0) {
       const swal = require('sweetalert2');
       swal({
@@ -69,32 +72,37 @@ class ProductsList extends Component {
       })
     }
     return (
-      <div className="col" id="ProductsList">
-        <br />
-        <center><h1 id="productTitle">Productos</h1></center>
-        <br /><br />
-        <div className="row">
-          <br />
-          <Articles user_id={this.props.user.id} type={this.props.type} page={this.state.pages[this.state.selected]} />
-        </div>
-
-        <center id="center-pagination">
-          <div className="col" id="pagination">
-            <div className="pagination p12">
-              <ul>
-                <a href="#" onClick={() => this.move_pages(-1)} hidden={this.is_hidden(-1)}><li>Previous</li></a>
-                <a className={this.is_active(0)} href="#" onClick={() => this.set_active(0)} hidden={this.is_hidden(0)}><li>{this.state.pages[0]}</li></a>
-                <a className={this.is_active(1)} href="#" onClick={() => this.set_active(1)} hidden={this.is_hidden(1)}><li>{this.state.pages[1]}</li></a>
-                <a className={this.is_active(2)} href="#" onClick={() => this.set_active(2)} hidden={this.is_hidden(2)}><li>{this.state.pages[2]}</li></a>
-                <a className={this.is_active(3)} href="#" onClick={() => this.set_active(3)} hidden={this.is_hidden(3)}><li>{this.state.pages[3]}</li></a>
-                <a className={this.is_active(4)} href="#" onClick={() => this.set_active(4)} hidden={this.is_hidden(4)}><li>{this.state.pages[4]}</li></a>
-                <a className={this.is_active(5)} href="#" onClick={() => this.set_active(5)} hidden={this.is_hidden(5)}><li>{this.state.pages[5]}</li></a>
-                <a href="#" onClick={() => this.move_pages(1)} hidden={this.is_hidden(6)}><li>Next</li></a>
-              </ul>
+      <div className="container-full" id="screen">
+        <div className="row" id="display">
+          <Header value='normal' />
+          <div className="col" id="ProductsList">
+            <br />
+            <center><h1 id="productTitle">Productos</h1></center>
+            <br /><br />
+            <div className="row">
+              <br />
+              <Articles user_id={qs.parse(this.props.location.search).id} type={this.props.type} page={this.state.pages[this.state.selected]} />
             </div>
-          </div>
-        </center>
 
+            <center id="center-pagination">
+              <div className="col" id="pagination">
+                <div className="pagination p12">
+                  <ul>
+                    <a href="#" onClick={() => this.move_pages(-1)} hidden={this.is_hidden(-1)}><li>Previous</li></a>
+                    <a className={this.is_active(0)} href="#" onClick={() => this.set_active(0)} hidden={this.is_hidden(0)}><li>{this.state.pages[0]}</li></a>
+                    <a className={this.is_active(1)} href="#" onClick={() => this.set_active(1)} hidden={this.is_hidden(1)}><li>{this.state.pages[1]}</li></a>
+                    <a className={this.is_active(2)} href="#" onClick={() => this.set_active(2)} hidden={this.is_hidden(2)}><li>{this.state.pages[2]}</li></a>
+                    <a className={this.is_active(3)} href="#" onClick={() => this.set_active(3)} hidden={this.is_hidden(3)}><li>{this.state.pages[3]}</li></a>
+                    <a className={this.is_active(4)} href="#" onClick={() => this.set_active(4)} hidden={this.is_hidden(4)}><li>{this.state.pages[4]}</li></a>
+                    <a className={this.is_active(5)} href="#" onClick={() => this.set_active(5)} hidden={this.is_hidden(5)}><li>{this.state.pages[5]}</li></a>
+                    <a href="#" onClick={() => this.move_pages(1)} hidden={this.is_hidden(6)}><li>Next</li></a>
+                  </ul>
+                </div>
+              </div>
+            </center>
+
+          </div>
+        </div>
       </div>
     );
   }
@@ -231,4 +239,4 @@ class Add extends Component {
 }
 
 
-export default connect(mapStateToProps)(ProductsList);
+export default connect(mapStateToProps)(ProductsListExternal);

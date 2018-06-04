@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import '../style/Search.css';
 import Header from './Header';
 import SearchList from './SearchList';
+import { connect } from 'react-redux';
 
 export class Search extends Component {
     constructor(props){
         super(props);
         this.state={filter : {search:'',
-                    min_price:-1,
+                    min_price:0,
                     max_price:50000000,
                     qualification: 0.0
         }}
@@ -16,6 +17,33 @@ export class Search extends Component {
   render() {
       console.log("search")
       console.log(this.state.filter)
+      console.log("ID", this.props.user.id)
+
+    if (this.props.user.id == -1){
+        return (
+            <div className="container-full" id ="screen">
+              <div className="row" id ="display">
+                  <Header/>
+                  <div className="col" id="container">
+                      <div className="row">
+                          <div className="col" id="FiltersCol">
+                              <div className = "col"id="filtersearchcol">
+                                  <center>
+                                  <input  type="text" name="search" ref="search" className="filterText" id="filterText"/>
+                                  </center>
+                              </div>                             
+                              
+                              <center><button className="button button1" onClick={()=>this.searchArticles()}>Buscar</button></center>
+                          </div>
+                          <div className="col" id="sBodyCol">
+                                  <SearchList filter={this.state.filter}/>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          );
+    }
     return (
       <div className="container-full" id ="screen">
         <div className="row" id ="display">
@@ -79,4 +107,9 @@ export class Search extends Component {
   }
 }
 
-export default Search;
+const mapStateToProps = state => ({
+    user: state.user
+    
+  });
+
+export default connect(mapStateToProps) (Search);
